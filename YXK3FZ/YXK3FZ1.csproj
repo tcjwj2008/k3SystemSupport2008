@@ -1,0 +1,1526 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2A7D991A-FB77-4135-9E06-BAD2AA936784}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YXK3FZ</RootNamespace>
+    <AssemblyName>YXK3FZ</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>K3.ico</ApplicationIcon>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.VSDesigner, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Administrator\Desktop\NPOI\新建文件夹\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="NPOI, Version=2.0.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Administrator\Desktop\NPOI\新建文件夹\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.0.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Administrator\Desktop\NPOI\新建文件夹\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.0.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Administrator\Desktop\NPOI\新建文件夹\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.0.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Administrator\Desktop\NPOI\新建文件夹\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CC\frm_dzp_icstock_csck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CC\frm_dzp_icstock_csck.Designer.cs">
+      <DependentUpon>frm_dzp_icstock_csck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CC\frm_dzp_receipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CC\frm_dzp_receipt.Designer.cs">
+      <DependentUpon>frm_dzp_receipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CC\frm_dzp_receipt_other.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CC\frm_dzp_receipt_other.Designer.cs">
+      <DependentUpon>frm_dzp_receipt_other.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CC\frm_ry_in_icstock_xs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CC\frm_ry_in_icstock_xs.Designer.cs">
+      <DependentUpon>frm_ry_in_icstock_xs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CC\frm_rzp_icstock_wg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CC\frm_rzp_icstock_wg.Designer.cs">
+      <DependentUpon>frm_rzp_icstock_wg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CC\frm_sp_in_icstock_xs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CC\frm_sp_in_icstock_xs.Designer.cs">
+      <DependentUpon>frm_sp_in_icstock_xs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComClass\Chart.cs" />
+    <Compile Include="ComClass\CommExcel.cs" />
+    <Compile Include="ComClass\CommOfficeExcel.cs" />
+    <Compile Include="ComClass\CommonUse.cs" />
+    <Compile Include="ComClass\OperatorFile.cs" />
+    <Compile Include="ComClass\PropertyClass.cs" />
+    <Compile Include="ComClass\SqlBulkCopyLib.cs" />
+    <Compile Include="ComClass\SqlHelper.cs" />
+    <Compile Include="ComClass\WaitFormService.cs" />
+    <Compile Include="CC\CW\frmPriceMager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CC\CW\frmPriceMager.Designer.cs">
+      <DependentUpon>frmPriceMager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataClass\DataBase.cs" />
+    <Compile Include="DZPGL\frmOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DZPGL\frmOrder.Designer.cs">
+      <DependentUpon>frmOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DZPGL\frmOrderList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DZPGL\frmOrderList.Designer.cs">
+      <DependentUpon>frmOrderList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DZPGL\frm_DZPKJ_orderMary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DZPGL\frm_DZPKJ_orderMary.Designer.cs">
+      <DependentUpon>frm_DZPKJ_orderMary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWaiting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWaiting.Designer.cs">
+      <DependentUpon>frmWaiting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainForm.Designer.cs">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OA\frmOA_YZ01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OA\frmOA_YZ01.Designer.cs">
+      <DependentUpon>frmOA_YZ01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OA\frmOA_YZ02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OA\frmOA_YZ02.Designer.cs">
+      <DependentUpon>frmOA_YZ02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OA\frmOA_YZ03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OA\frmOA_YZ03.Designer.cs">
+      <DependentUpon>frmOA_YZ03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintDataGrid\PrintDGV.cs" />
+    <Compile Include="PrintDataGrid\PrintOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintDataGrid\PrintOptions.designer.cs">
+      <DependentUpon>PrintOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CC\frm_dzp_icstock_csck.resx">
+      <DependentUpon>frm_dzp_icstock_csck.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CC\frm_dzp_receipt.resx">
+      <DependentUpon>frm_dzp_receipt.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CC\frm_dzp_receipt_other.resx">
+      <DependentUpon>frm_dzp_receipt_other.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CC\frm_ry_in_icstock_xs.resx">
+      <DependentUpon>frm_ry_in_icstock_xs.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CC\frm_rzp_icstock_wg.resx">
+      <DependentUpon>frm_rzp_icstock_wg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CC\frm_sp_in_icstock_xs.resx">
+      <DependentUpon>frm_sp_in_icstock_xs.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CC\CW\frmPriceMager.resx">
+      <DependentUpon>frmPriceMager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DZPGL\frmOrder.resx">
+      <DependentUpon>frmOrder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DZPGL\frmOrderList.resx">
+      <DependentUpon>frmOrderList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DZPGL\frm_DZPKJ_orderMary.resx">
+      <DependentUpon>frm_DZPKJ_orderMary.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWaiting.resx">
+      <DependentUpon>frmWaiting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainForm.resx">
+      <DependentUpon>mainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OA\frmOA_YZ01.resx">
+      <DependentUpon>frmOA_YZ01.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OA\frmOA_YZ02.resx">
+      <DependentUpon>frmOA_YZ02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OA\frmOA_YZ03.resx">
+      <DependentUpon>frmOA_YZ03.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintDataGrid\PrintOptions.resx">
+      <DependentUpon>PrintOptions.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP\from\frmBTpfsk.resx">
+      <DependentUpon>frmBTpfsk.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP\from\frmBTpfskdz.resx">
+      <DependentUpon>frmBTpfskdz.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP\from\frmDzpYsmx.resx">
+      <DependentUpon>frmDzpYsmx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP\from\frmDzpYsmx_test.resx">
+      <DependentUpon>frmDzpYsmx_test.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP\from\frmDzpYsTJ.resx">
+      <DependentUpon>frmDzpYsTJ.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP\from\frmDzpYsTJ_test.resx">
+      <DependentUpon>frmDzpYsTJ_test.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP\from\frmNewRSjy.resx">
+      <DependentUpon>frmNewRSjy.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP\from\frmRSjy.resx">
+      <DependentUpon>frmRSjy.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP\from\frmRSYJBMX.resx">
+      <DependentUpon>frmRSYJBMX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP\from\frmSPyszk.resx">
+      <DependentUpon>frmSPyszk.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP\from\frmSpZyd.resx">
+      <DependentUpon>frmSpZyd.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP\from\frmRYYsmx.resx">
+      <DependentUpon>frmRYYsmx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP\rpt\btpfsk.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>btpfsk.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP\rpt\Btsk_d.resx">
+      <DependentUpon>Btsk_d.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP\rpt\Btsk_d.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Btsk_d.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP\rpt\btsk_d_dz.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>btsk_d_dz.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP\rpt\dzpysdzd.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>dzpysdzd.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP\rpt\dzpyxtj.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>dzpyxtj.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP\rpt\yx_cr_pdjy.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>yx_cr_pdjy.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP\rpt\白条批发部级别明细.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>白条批发部级别明细.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP\rpt\筐具出入库订单打印.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>筐具出入库订单打印.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP\rpt\肉业订单打印.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>肉业订单打印.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP\rpt\食品销售计划表.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>食品销售计划表.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGL\frmCostQueryForm.resx">
+      <DependentUpon>frmCostQueryForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGL\frmQuery.resx">
+      <DependentUpon>frmQuery.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGL\frmRYDayPrice.resx">
+      <DependentUpon>frmRYDayPrice.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGL\frmXSBase.resx">
+      <DependentUpon>frmXSBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGL\frmRYGLDayBase.resx">
+      <DependentUpon>frmRYGLDayBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGL\frmRYGLMonthBase.resx">
+      <DependentUpon>frmRYGLMonthBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\frmOrder.resx">
+      <DependentUpon>frmOrder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\frmOrderList.resx">
+      <DependentUpon>frmOrderList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\frm_rp_pdjy.resx">
+      <DependentUpon>frm_rp_pdjy.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\frm_qhc.resx">
+      <DependentUpon>frm_qhc.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\frm_ry_orderMary.resx">
+      <DependentUpon>frm_ry_orderMary.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\frm_spOrderPlan.resx">
+      <DependentUpon>frm_spOrderPlan.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\frm_yunrui_customer.resx">
+      <DependentUpon>frm_yunrui_customer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\frm_yunrui_Item.resx">
+      <DependentUpon>frm_yunrui_Item.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\frm_yunrui_Item_Insert.resx">
+      <DependentUpon>frm_yunrui_Item_Insert.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\frm_yunrui_Organization_Insert.resx">
+      <DependentUpon>frm_yunrui_Organization_Insert.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\frm_yx_btpfjbmx.resx">
+      <DependentUpon>frm_yx_btpfjbmx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\frm_yx_EmpJS.resx">
+      <DependentUpon>frm_yx_EmpJS.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\frm_YX_ICitemSet.resx">
+      <DependentUpon>frm_YX_ICitemSet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\frm_yx_mdfpts.resx">
+      <DependentUpon>frm_yx_mdfpts.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\frm_yx_tzjh.resx">
+      <DependentUpon>frm_yx_tzjh.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\frm_yx_WhiteList.resx">
+      <DependentUpon>frm_yx_WhiteList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\frm_yx_ywyjswcb.resx">
+      <DependentUpon>frm_yx_ywyjswcb.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\frm_yx_zydpsmxb.resx">
+      <DependentUpon>frm_yx_zydpsmxb.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\frm_yx_zydzjd.resx">
+      <DependentUpon>frm_yx_zydzjd.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\NewOrders\frmMOrder.resx">
+      <DependentUpon>frmMOrder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\NewOrders\frmMOrderList.resx">
+      <DependentUpon>frmMOrderList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\NewOrders\frmSOrderList.resx">
+      <DependentUpon>frmSOrderList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\NewOrders\frmROrderList.resx">
+      <DependentUpon>frmROrderList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\NewOrders\frmSOrder.resx">
+      <DependentUpon>frmSOrder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\NewOrders\frmROrder.resx">
+      <DependentUpon>frmROrder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SO\frmIcitemSet.resx">
+      <DependentUpon>frmIcitemSet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SO\FrmRYmdseorder.resx">
+      <DependentUpon>FrmRYmdseorder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SO\FRMSelectDataDialog.resx">
+      <DependentUpon>FRMSelectDataDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SO\frmSeorderPlan.resx">
+      <DependentUpon>frmSeorderPlan.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SO\frmSeorderPlanEdit.resx">
+      <DependentUpon>frmSeorderPlanEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SP\frmBTpfmx02.resx">
+      <DependentUpon>frmBTpfmx02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SP\frmBTpsyeb02.resx">
+      <DependentUpon>frmBTpsyeb02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SP\FrmPriceDiff.resx">
+      <DependentUpon>FrmPriceDiff.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SP\frmXYBase.resx">
+      <DependentUpon>frmXYBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SP\frmYZBase.resx">
+      <DependentUpon>frmYZBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SP\FrmReportDiff.resx">
+      <DependentUpon>FrmReportDiff.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SY\FormAssignRight.resx">
+      <DependentUpon>FormAssignRight.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SY\frmPwd.resx">
+      <DependentUpon>frmPwd.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SY\frmWordNote.resx">
+      <DependentUpon>frmWordNote.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SY\OperatorForm.resx">
+      <DependentUpon>OperatorForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SY\frmSaleConvert.resx">
+      <DependentUpon>frmSaleConvert.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YXSLHLB\frmXYBase.resx">
+      <DependentUpon>frmXYBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmFImportDataList.resx">
+      <DependentUpon>frmFImportDataList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZBoatYearData.resx">
+      <DependentUpon>frmYZBoatYearData.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZDepartYearData.resx">
+      <DependentUpon>frmYZDepartYearData.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZJXKHSelect.resx">
+      <DependentUpon>frmYZJXKHSelect.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZOrder01.resx">
+      <DependentUpon>frmYZOrder01.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZBase.resx">
+      <DependentUpon>frmYZBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZOrderList01.resx">
+      <DependentUpon>frmYZOrderList01.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZOrderList02.resx">
+      <DependentUpon>frmYZOrderList02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZOrder02.resx">
+      <DependentUpon>frmYZOrder02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZOrder03.resx">
+      <DependentUpon>frmYZOrder03.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZOrder04.resx">
+      <DependentUpon>frmYZOrder04.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZOrder05.resx">
+      <DependentUpon>frmYZOrder05.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZOrder06.resx">
+      <DependentUpon>frmYZOrder06.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZOrder07.resx">
+      <DependentUpon>frmYZOrder07.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZOrder08.resx">
+      <DependentUpon>frmYZOrder08.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZOrder09.resx">
+      <DependentUpon>frmYZOrder09.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZOrder10.resx">
+      <DependentUpon>frmYZOrder10.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZOrder11.resx">
+      <DependentUpon>frmYZOrder11.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZOrder12.resx">
+      <DependentUpon>frmYZOrder12.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZOrder13.resx">
+      <DependentUpon>frmYZOrder13.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZOrderList03.resx">
+      <DependentUpon>frmYZOrderList03.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZOrderList04.resx">
+      <DependentUpon>frmYZOrderList04.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZOrderList05.resx">
+      <DependentUpon>frmYZOrderList05.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZOrderList06.resx">
+      <DependentUpon>frmYZOrderList06.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZOrderList07.resx">
+      <DependentUpon>frmYZOrderList07.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZOrderList08.resx">
+      <DependentUpon>frmYZOrderList08.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZOrderList09.resx">
+      <DependentUpon>frmYZOrderList09.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZOrderList10.resx">
+      <DependentUpon>frmYZOrderList10.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZOrderList11.resx">
+      <DependentUpon>frmYZOrderList11.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZOrderList12.resx">
+      <DependentUpon>frmYZOrderList12.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZOrderList13.resx">
+      <DependentUpon>frmYZOrderList13.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZParameterSet.resx">
+      <DependentUpon>frmYZParameterSet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZPerMonthProject.resx">
+      <DependentUpon>frmYZPerMonthProject.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZProject.resx">
+      <DependentUpon>frmYZProject.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZWaterElecData.resx">
+      <DependentUpon>frmYZWaterElecData.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\frmYZYearSelect.resx">
+      <DependentUpon>frmYZYearSelect.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\YZ_FBoatJXKH_ByDepart.resx">
+      <DependentUpon>YZ_FBoatJXKH_ByDepart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\YZ_FBoatJXKH_ByProjet.resx">
+      <DependentUpon>YZ_FBoatJXKH_ByProjet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\YZ_FYearData.resx">
+      <DependentUpon>YZ_FYearData.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YZGL\YZ_FYearDataByDept.resx">
+      <DependentUpon>YZ_FYearDataByDept.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RP\from\frmBTpfsk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RP\from\frmBTpfsk.Designer.cs">
+      <DependentUpon>frmBTpfsk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RP\from\frmBTpfskdz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RP\from\frmBTpfskdz.Designer.cs">
+      <DependentUpon>frmBTpfskdz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RP\from\frmDzpYsmx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RP\from\frmDzpYsmx.Designer.cs">
+      <DependentUpon>frmDzpYsmx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RP\from\frmDzpYsmx_test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RP\from\frmDzpYsmx_test.Designer.cs">
+      <DependentUpon>frmDzpYsmx_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RP\from\frmDzpYsTJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RP\from\frmDzpYsTJ.Designer.cs">
+      <DependentUpon>frmDzpYsTJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RP\from\frmDzpYsTJ_test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RP\from\frmDzpYsTJ_test.Designer.cs">
+      <DependentUpon>frmDzpYsTJ_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RP\from\frmNewRSjy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RP\from\frmNewRSjy.Designer.cs">
+      <DependentUpon>frmNewRSjy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RP\from\frmRSjy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RP\from\frmRSjy.Designer.cs">
+      <DependentUpon>frmRSjy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RP\from\frmRSYJBMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RP\from\frmRSYJBMX.Designer.cs">
+      <DependentUpon>frmRSYJBMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RP\from\frmSPyszk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RP\from\frmSPyszk.Designer.cs">
+      <DependentUpon>frmSPyszk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RP\from\frmSpZyd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RP\from\frmSpZyd.Designer.cs">
+      <DependentUpon>frmSpZyd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RP\from\frmRYYsmx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RP\from\frmRYYsmx.Designer.cs">
+      <DependentUpon>frmRYYsmx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RP\rpt\btpfsk.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>btpfsk.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RP\rpt\Btsk_d.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Btsk_d.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RP\rpt\btsk_d_dz.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>btsk_d_dz.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RP\rpt\dzpysdzd.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dzpysdzd.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RP\rpt\dzpyxtj.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dzpyxtj.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RP\rpt\yx_cr_pdjy.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>yx_cr_pdjy.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RP\rpt\白条批发部级别明细.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>白条批发部级别明细.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RP\rpt\筐具出入库订单打印.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>筐具出入库订单打印.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RP\rpt\肉业订单打印.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>肉业订单打印.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RP\rpt\食品销售计划表.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>食品销售计划表.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RYGL\frmCostQueryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGL\frmCostQueryForm.Designer.cs">
+      <DependentUpon>frmCostQueryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGL\frmQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGL\frmQuery.Designer.cs">
+      <DependentUpon>frmQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGL\frmRYDayPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGL\frmRYDayPrice.Designer.cs">
+      <DependentUpon>frmRYDayPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGL\frmXSBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGL\frmXSBase.Designer.cs">
+      <DependentUpon>frmXSBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGL\frmRYGLDayBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGL\frmRYGLDayBase.Designer.cs">
+      <DependentUpon>frmRYGLDayBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGL\frmRYGLMonthBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGL\frmRYGLMonthBase.Designer.cs">
+      <DependentUpon>frmRYGLMonthBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\frmOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\frmOrder.Designer.cs">
+      <DependentUpon>frmOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\frmOrderList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\frmOrderList.Designer.cs">
+      <DependentUpon>frmOrderList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\frm_rp_pdjy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\frm_rp_pdjy.Designer.cs">
+      <DependentUpon>frm_rp_pdjy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\frm_qhc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\frm_qhc.Designer.cs">
+      <DependentUpon>frm_qhc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\frm_ry_orderMary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\frm_ry_orderMary.Designer.cs">
+      <DependentUpon>frm_ry_orderMary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\frm_spOrderPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\frm_spOrderPlan.Designer.cs">
+      <DependentUpon>frm_spOrderPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\frm_yunrui_customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\frm_yunrui_customer.Designer.cs">
+      <DependentUpon>frm_yunrui_customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\frm_yunrui_Item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\frm_yunrui_Item.Designer.cs">
+      <DependentUpon>frm_yunrui_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\frm_yunrui_Item_Insert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\frm_yunrui_Item_Insert.Designer.cs">
+      <DependentUpon>frm_yunrui_Item_Insert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\frm_yunrui_Organization_Insert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\frm_yunrui_Organization_Insert.Designer.cs">
+      <DependentUpon>frm_yunrui_Organization_Insert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\frm_yx_btpfjbmx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\frm_yx_btpfjbmx.Designer.cs">
+      <DependentUpon>frm_yx_btpfjbmx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\frm_yx_EmpJS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\frm_yx_EmpJS.Designer.cs">
+      <DependentUpon>frm_yx_EmpJS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\frm_YX_ICitemSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\frm_YX_ICitemSet.Designer.cs">
+      <DependentUpon>frm_YX_ICitemSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\frm_yx_mdfpts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\frm_yx_mdfpts.Designer.cs">
+      <DependentUpon>frm_yx_mdfpts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\frm_yx_tzjh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\frm_yx_tzjh.Designer.cs">
+      <DependentUpon>frm_yx_tzjh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\frm_yx_WhiteList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\frm_yx_WhiteList.Designer.cs">
+      <DependentUpon>frm_yx_WhiteList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\frm_yx_ywyjswcb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\frm_yx_ywyjswcb.Designer.cs">
+      <DependentUpon>frm_yx_ywyjswcb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\frm_yx_zydpsmxb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\frm_yx_zydpsmxb.Designer.cs">
+      <DependentUpon>frm_yx_zydpsmxb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\frm_yx_zydzjd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\frm_yx_zydzjd.Designer.cs">
+      <DependentUpon>frm_yx_zydzjd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\NewOrders\frmMOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\NewOrders\frmMOrder.Designer.cs">
+      <DependentUpon>frmMOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\NewOrders\frmMOrderList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\NewOrders\frmMOrderList.Designer.cs">
+      <DependentUpon>frmMOrderList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\NewOrders\frmSOrderList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\NewOrders\frmSOrderList.Designer.cs">
+      <DependentUpon>frmSOrderList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\NewOrders\frmROrderList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\NewOrders\frmROrderList.Designer.cs">
+      <DependentUpon>frmROrderList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\NewOrders\frmSOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\NewOrders\frmSOrder.Designer.cs">
+      <DependentUpon>frmSOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\NewOrders\frmROrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\NewOrders\frmROrder.Designer.cs">
+      <DependentUpon>frmROrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SO\frmIcitemSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SO\frmIcitemSet.Designer.cs">
+      <DependentUpon>frmIcitemSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SO\FrmRYmdseorder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SO\FrmRYmdseorder.Designer.cs">
+      <DependentUpon>FrmRYmdseorder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SO\FRMSelectDataDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SO\FRMSelectDataDialog.Designer.cs">
+      <DependentUpon>FRMSelectDataDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SO\frmSeorderPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SO\frmSeorderPlan.Designer.cs">
+      <DependentUpon>frmSeorderPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SO\frmSeorderPlanEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SO\frmSeorderPlanEdit.Designer.cs">
+      <DependentUpon>frmSeorderPlanEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SP\frmBTpfmx02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SP\frmBTpfmx02.Designer.cs">
+      <DependentUpon>frmBTpfmx02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SP\frmBTpsyeb02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SP\frmBTpsyeb02.Designer.cs">
+      <DependentUpon>frmBTpsyeb02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SP\FrmPriceDiff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SP\FrmPriceDiff.Designer.cs">
+      <DependentUpon>FrmPriceDiff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SP\frmXYBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SP\frmXYBase.Designer.cs">
+      <DependentUpon>frmXYBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SP\frmYZBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SP\frmYZBase.Designer.cs">
+      <DependentUpon>frmYZBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SP\FrmReportDiff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SP\FrmReportDiff.Designer.cs">
+      <DependentUpon>FrmReportDiff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SY\FormAssignRight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SY\FormAssignRight.Designer.cs">
+      <DependentUpon>FormAssignRight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SY\frmPwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SY\frmPwd.Designer.cs">
+      <DependentUpon>frmPwd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SY\frmWordNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SY\frmWordNote.Designer.cs">
+      <DependentUpon>frmWordNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SY\OperatorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SY\OperatorForm.Designer.cs">
+      <DependentUpon>OperatorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SY\frmSaleConvert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SY\frmSaleConvert.Designer.cs">
+      <DependentUpon>frmSaleConvert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YXSLHLB\frmXYBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YXSLHLB\frmXYBase.Designer.cs">
+      <DependentUpon>frmXYBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmFImportDataList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmFImportDataList.Designer.cs">
+      <DependentUpon>frmFImportDataList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZBoatYearData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZBoatYearData.Designer.cs">
+      <DependentUpon>frmYZBoatYearData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZDepartYearData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZDepartYearData.Designer.cs">
+      <DependentUpon>frmYZDepartYearData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZJXKHSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZJXKHSelect.Designer.cs">
+      <DependentUpon>frmYZJXKHSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrder01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrder01.Designer.cs">
+      <DependentUpon>frmYZOrder01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZBase.Designer.cs">
+      <DependentUpon>frmYZBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrderList01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrderList01.Designer.cs">
+      <DependentUpon>frmYZOrderList01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrderList02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrderList02.Designer.cs">
+      <DependentUpon>frmYZOrderList02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrderList03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrderList03.Designer.cs">
+      <DependentUpon>frmYZOrderList03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrderList04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrderList04.Designer.cs">
+      <DependentUpon>frmYZOrderList04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrderList05.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrderList05.Designer.cs">
+      <DependentUpon>frmYZOrderList05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrderList06.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrderList06.Designer.cs">
+      <DependentUpon>frmYZOrderList06.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrderList07.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrderList07.Designer.cs">
+      <DependentUpon>frmYZOrderList07.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrderList08.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrderList08.Designer.cs">
+      <DependentUpon>frmYZOrderList08.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrderList09.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrderList09.Designer.cs">
+      <DependentUpon>frmYZOrderList09.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrderList10.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrderList10.Designer.cs">
+      <DependentUpon>frmYZOrderList10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrderList11.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrderList11.Designer.cs">
+      <DependentUpon>frmYZOrderList11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrderList12.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrderList12.Designer.cs">
+      <DependentUpon>frmYZOrderList12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrderList13.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrderList13.Designer.cs">
+      <DependentUpon>frmYZOrderList13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrder02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrder02.Designer.cs">
+      <DependentUpon>frmYZOrder02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrder03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrder03.Designer.cs">
+      <DependentUpon>frmYZOrder03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrder04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrder04.Designer.cs">
+      <DependentUpon>frmYZOrder04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrder05.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrder05.Designer.cs">
+      <DependentUpon>frmYZOrder05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrder06.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrder06.Designer.cs">
+      <DependentUpon>frmYZOrder06.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrder07.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrder07.Designer.cs">
+      <DependentUpon>frmYZOrder07.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrder08.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrder08.Designer.cs">
+      <DependentUpon>frmYZOrder08.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrder09.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrder09.Designer.cs">
+      <DependentUpon>frmYZOrder09.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrder10.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrder10.Designer.cs">
+      <DependentUpon>frmYZOrder10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrder11.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrder11.Designer.cs">
+      <DependentUpon>frmYZOrder11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrder12.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrder12.Designer.cs">
+      <DependentUpon>frmYZOrder12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrder13.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZOrder13.Designer.cs">
+      <DependentUpon>frmYZOrder13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZParameterSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZParameterSet.Designer.cs">
+      <DependentUpon>frmYZParameterSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZPerMonthProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZPerMonthProject.Designer.cs">
+      <DependentUpon>frmYZPerMonthProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZProject.Designer.cs">
+      <DependentUpon>frmYZProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZWaterElecData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZWaterElecData.Designer.cs">
+      <DependentUpon>frmYZWaterElecData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\frmYZYearSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\frmYZYearSelect.Designer.cs">
+      <DependentUpon>frmYZYearSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\YZ_FBoatJXKH_ByDepart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\YZ_FBoatJXKH_ByDepart.Designer.cs">
+      <DependentUpon>YZ_FBoatJXKH_ByDepart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\YZ_FBoatJXKH_ByProjet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\YZ_FBoatJXKH_ByProjet.Designer.cs">
+      <DependentUpon>YZ_FBoatJXKH_ByProjet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\YZ_FYearData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\YZ_FYearData.Designer.cs">
+      <DependentUpon>YZ_FYearData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YZGL\YZ_FYearDataByDept.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YZGL\YZ_FYearDataByDept.Designer.cs">
+      <DependentUpon>YZ_FYearDataByDept.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ico\add.ico" />
+    <Content Include="Ico\baobiao图标.ico" />
+    <Content Include="Ico\btnfind.ico" />
+    <Content Include="Ico\cancel.ico" />
+    <Content Include="Ico\change.ico" />
+    <Content Include="Ico\CLAIM.ICO" />
+    <Content Include="Ico\close.ico" />
+    <Content Include="Ico\delete.ico" />
+    <Content Include="Ico\export.ico" />
+    <Content Include="Ico\find.ico" />
+    <Content Include="Ico\open.ico" />
+    <Content Include="Ico\print.ico" />
+    <Content Include="Ico\Query.ico" />
+    <Content Include="Ico\refulsh.ico" />
+    <None Include="app.config" />
+    <None Include="Ico\save.ico" />
+    <Content Include="Ico\stop.ico" />
+    <Content Include="Ico\UNCLAIM.ICO" />
+    <Content Include="Ico\xitong图标.ico" />
+    <Content Include="Ico\主生产计划.ico" />
+    <Content Include="Ico\产品销售明细表.ico" />
+    <Content Include="Ico\产品销售毛利明细表.ico" />
+    <Content Include="Ico\产品销售毛利汇总表.ico" />
+    <Content Include="Ico\产品销售汇总表.ico" />
+    <Content Include="Ico\仓库管理.ico" />
+    <Content Include="Ico\初始化库存.ico" />
+    <Content Include="Ico\原材料采购明细表.ico" />
+    <Content Include="Ico\原材料采购汇总表.ico" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Ico\取消.ico" />
+    <Content Include="Ico\基础分类.ico" />
+    <Content Include="Ico\基础管理.ico" />
+    <Content Include="Ico\客户管理.ico" />
+    <Content Include="Ico\客户进程.ico" />
+    <Content Include="Ico\密码修改.ico" />
+    <Content Include="Ico\库存清单.ico" />
+    <Content Include="Ico\库存盘点.ico" />
+    <Content Include="Ico\库存预警明细表.ico" />
+    <Content Include="Ico\报损清单.ico" />
+    <Content Include="Ico\操作员管理.ico" />
+    <Content Include="Ico\操作权限.ico" />
+    <Content Include="Ico\档案管理.ico" />
+    <Content Include="Ico\物料清单.ico" />
+    <Content Include="Ico\生产入库单.ico" />
+    <Content Include="Ico\生产单.ico" />
+    <Content Include="Ico\生产完工处理.ico" />
+    <Content Include="Ico\生产管理.ico" />
+    <None Include="Ico\确定.ico" />
+    <Content Include="Ico\类别管理.ico" />
+    <Content Include="Ico\类型分析.ico" />
+    <Content Include="Ico\结算帐户.ico" />
+    <Content Include="Ico\财务管理.ico" />
+    <Content Include="Ico\退料单.ico" />
+    <Content Include="Ico\采购付款单 %2867%29.ico" />
+    <Content Include="Ico\采购入库单.ico" />
+    <Content Include="Ico\采购管理.ico" />
+    <Content Include="Ico\采购订单.ico" />
+    <Content Include="Ico\采购费用单.ico" />
+    <Content Include="Ico\银行存款单.ico" />
+    <Content Include="Ico\销售出库单.ico" />
+    <Content Include="Ico\销售收款单.ico" />
+    <Content Include="Ico\销售管理.ico" />
+    <Content Include="Ico\销售订单.ico" />
+    <Content Include="Ico\销售费用单.ico" />
+    <Content Include="Ico\领料单.ico" />
+    <Content Include="Images\Image00013.bmp" />
+    <Content Include="Images\正在处理.jpg" />
+    <Content Include="Images\系统登录界面.bmp" />
+    <None Include="Images\银祥集团1_副本.jpg" />
+    <Content Include="K3.ico" />
+    <Content Include="OA\备注.txt" />
+    <Content Include="xitong图标.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="database\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
