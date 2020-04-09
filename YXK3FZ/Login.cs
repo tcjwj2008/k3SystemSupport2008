@@ -55,7 +55,7 @@ namespace YXK3FZ
         private void picLogin_Click(object sender, EventArgs e)
         {
 
-             DataBase db = new DataBase();
+            DataBase db = new DataBase();
             SqlDataReader sdr = null;
             
             this.errInfo.Clear();

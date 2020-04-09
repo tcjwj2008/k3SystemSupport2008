@@ -115,9 +115,9 @@ namespace YXK3FZ.CC
 
             this.toolStripStatusLabel1.Text = " 开始写入K3......";
 
-            int w = k / 50 + 1;//由于导入记录太多会超时 改为每次导入50条
-            int f = 1;
-            while (f <= w)
+            //int w = k / 50 + 1;//由于导入记录太多会超时 改为每次导入50条
+            //int f = 1;
+            //while (f <= w)
             {
                 DataBase db2 = new DataBase(PropertyClass.con_yzyinxiang);
                 SqlParameter param2 = new SqlParameter("@username", SqlDbType.VarChar);
@@ -132,7 +132,7 @@ namespace YXK3FZ.CC
                     db2.GetProcRow("sp_k3_2APPORDER_QIU", inputParameters2);
                     this.toolStripStatusLabel1.Text = " 表格数据导入数据成功!";
                     // SetFormCaption
-                    WaitFormService.SetWaitFormCaption("正在导入" + (f * 50).ToString() + "条记录后面的数据！");
+                    WaitFormService.SetWaitFormCaption("正在导入数据！");
 
                 }
                 catch (Exception ex)
@@ -146,7 +146,7 @@ namespace YXK3FZ.CC
 
 
 
-                f++;
+                //f++;
             }
             WaitFormService.CloseWaitForm();
             MessageBox.Show("成功导入K3!", "软件提示");

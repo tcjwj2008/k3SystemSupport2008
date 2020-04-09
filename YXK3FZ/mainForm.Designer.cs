@@ -84,6 +84,7 @@
             this.button28 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
+            this.button43 = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -148,7 +149,6 @@
             this.tabPage29 = new System.Windows.Forms.TabPage();
             this.listBox13 = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button43 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1017,6 +1017,17 @@
             this.button22.UseVisualStyleBackColor = true;
             this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
+            // button43
+            // 
+            this.button43.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button43.Location = new System.Drawing.Point(510, 153);
+            this.button43.Name = "button43";
+            this.button43.Size = new System.Drawing.Size(163, 69);
+            this.button43.TabIndex = 6;
+            this.button43.Text = "APP订单导入";
+            this.button43.UseVisualStyleBackColor = true;
+            this.button43.Click += new System.EventHandler(this.button43_Click);
+            // 
             // tabPage5
             // 
             this.tabPage5.ImageKey = "生产管理.ico";
@@ -1545,7 +1556,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.38462F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.61538F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 261F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 558F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 561F));
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.button2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.button3, 0, 1);
@@ -1567,7 +1578,7 @@
             this.button1.ImageList = this.imgMain;
             this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(71, 88);
+            this.button1.Size = new System.Drawing.Size(69, 88);
             this.button1.TabIndex = 0;
             this.button1.Text = "用户管理";
             this.button1.UseVisualStyleBackColor = true;
@@ -1647,9 +1658,9 @@
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button2.ImageKey = "操作权限.ico";
             this.button2.ImageList = this.imgMain;
-            this.button2.Location = new System.Drawing.Point(80, 3);
+            this.button2.Location = new System.Drawing.Point(78, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(66, 88);
+            this.button2.Size = new System.Drawing.Size(65, 88);
             this.button2.TabIndex = 1;
             this.button2.Text = "权限管理";
             this.button2.UseVisualStyleBackColor = true;
@@ -1663,7 +1674,7 @@
             this.button3.ImageList = this.imgMain;
             this.button3.Location = new System.Drawing.Point(3, 97);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(71, 85);
+            this.button3.Size = new System.Drawing.Size(69, 85);
             this.button3.TabIndex = 2;
             this.button3.Text = "修改密码";
             this.button3.UseVisualStyleBackColor = true;
@@ -1785,7 +1796,7 @@
             "筐具出入库订单__报表"});
             this.listBox7.Location = new System.Drawing.Point(3, 3);
             this.listBox7.Name = "listBox7";
-            this.listBox7.Size = new System.Drawing.Size(753, 352);
+            this.listBox7.Size = new System.Drawing.Size(753, 355);
             this.listBox7.TabIndex = 0;
             // 
             // tabControl4
@@ -1924,17 +1935,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1026, 52);
             this.panel2.TabIndex = 1;
-            // 
-            // button43
-            // 
-            this.button43.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button43.Location = new System.Drawing.Point(510, 153);
-            this.button43.Name = "button43";
-            this.button43.Size = new System.Drawing.Size(163, 69);
-            this.button43.TabIndex = 6;
-            this.button43.Text = "APP订单导入";
-            this.button43.UseVisualStyleBackColor = true;
-            this.button43.Click += new System.EventHandler(this.button43_Click);
             // 
             // mainForm
             // 
