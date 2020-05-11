@@ -570,17 +570,22 @@ namespace YXK3FZ.RP.from
                     sSQL = string.Empty; //清空
                     sSQL2 = string.Empty; //清空
 
+
+                    //查门店管理部门店经营日报表
                     if (sDepartCode == "10.11") // 部门代码:10.11
                     {
                         sSQL = "  SELECT CAST( (ISNULL(SUM(R.FSubAllBankAmount),0)+ISNULL(SUM(x.FSubSJAmount),0))/10000 as decimal(18,2) ) FROM t_SubCustomSell R  ";
                         sSQL += " LEFT JOIN t_SubCustomSellMX X ON R.FID=X.FID ";
                         sSQL += " WHERE r.FDate='" + sDate + "' ";
-                        dDepartMoney=CalculatePrice(sSQL, string.Empty);
+                        //单个语句有存在，则只计算单个语句－门店管理部的经营金额
+                        dDepartMoney=CalculatePrice(sSQL, string.Empty);　　
+                        //合计到所有部门金额中去
                         dALLMoney = dALLMoney + dDepartMoney;
                         sDepartName = sDepartName + "" + dDepartMoney + "万元。";
                         sText = sText + sDepartName;
 
                     }
+                    //白条批发部
                     else if (sDepartCode == "10.12") // 部门代码:10.12
                     {
                         sSQL = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate='" + sDate + "' ";
@@ -602,6 +607,7 @@ namespace YXK3FZ.RP.from
                         sText = sText + sDepartName;
 
                     }
+                    //加盟开发部
                     else if (sDepartCode == "10.13") // 部门代码:10.13
                     {
                         sSQL = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate='" + sDate + "' ";
@@ -622,6 +628,7 @@ namespace YXK3FZ.RP.from
                         sDepartName = sDepartName + "" + dDepartMoney + "万元。";
                         sText = sText + sDepartName;
                     }
+                    //冻品销售部
                     else if (sDepartCode == "10.14") // 部门代码:10.14
                     {
                         //TODO...
@@ -641,7 +648,7 @@ namespace YXK3FZ.RP.from
                         sDepartName = sDepartName + "" + dDepartMoney + "万元。";
                         sText = sText + sDepartName;
                     }
-
+　　　　　　　　　　//厦门办室处
                     else if (sDepartCode == "10.15") // 部门代码:10.15
                     {
                         sSQL = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate='" + sDate + "' ";
@@ -661,6 +668,7 @@ namespace YXK3FZ.RP.from
                         sDepartName = sDepartName + "" + dDepartMoney + "万元。";
                         sText = sText + sDepartName;
                     }
+                    //福州办事处
                     else if (sDepartCode == "10.16") // 部门代码:10.16
                     {
                         sSQL = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate='" + sDate + "' ";
@@ -678,6 +686,7 @@ namespace YXK3FZ.RP.from
                         sDepartName = sDepartName + "" + dDepartMoney + "万元。";
                         sText = sText + sDepartName;
                     }
+                    //驻外办事处
                     else if (sDepartCode == "10.17") // 部门代码:10.17
                     {
                         sSQL = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate='" + sDate + "' ";
@@ -697,6 +706,7 @@ namespace YXK3FZ.RP.from
                         sDepartName = sDepartName + "" + dDepartMoney + "万元。";
                         sText = sText + sDepartName;
                     }
+                    //华南办事处
                     else if (sDepartCode == "10.18") // 部门代码:10.18
                     {
                         sSQL = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate='" + sDate + "' ";
@@ -708,6 +718,7 @@ namespace YXK3FZ.RP.from
                         sDepartName = sDepartName + "" + dDepartMoney + "万元。";
                         sText = sText + sDepartName;
                     }
+                    //小副产品
                     else if (sDepartCode == "10.19") // 部门代码:10.19
                     {
                         //TODO...
@@ -754,7 +765,7 @@ namespace YXK3FZ.RP.from
 
 
 								this.textBox3.Text = this.textBox3.Text + "\r\n" + "本月累计回款金额：" + getCurrentMonthMoney(sDate1, sDate2) + "万元。";
-
+              　　　　　　  //本月累计回款方法
 							//getCurrentMonthMoney
             }
         }

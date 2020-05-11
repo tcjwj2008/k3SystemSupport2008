@@ -35,6 +35,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -52,7 +53,6 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -73,7 +73,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(936, 584);
+            this.tabControl1.Size = new System.Drawing.Size(1068, 658);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -83,7 +83,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(928, 558);
+            this.tabPage1.Size = new System.Drawing.Size(1060, 632);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "直营店进货成本表";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -95,7 +95,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 72);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(922, 483);
+            this.panel2.Size = new System.Drawing.Size(1054, 557);
             this.panel2.TabIndex = 1;
             // 
             // dataGridView1
@@ -109,16 +109,16 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(922, 461);
+            this.dataGridView1.Size = new System.Drawing.Size(1054, 535);
             this.dataGridView1.TabIndex = 1;
             // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 461);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 535);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(922, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1054, 22);
             this.statusStrip1.TabIndex = 0;
             // 
             // toolStripStatusLabel1
@@ -139,8 +139,19 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(922, 69);
+            this.panel1.Size = new System.Drawing.Size(1054, 69);
             this.panel1.TabIndex = 0;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(450, 25);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(84, 27);
+            this.button6.TabIndex = 7;
+            this.button6.Tag = "导出";
+            this.button6.Text = "导出";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button3
             // 
@@ -318,22 +329,11 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "年：";
             // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(450, 25);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(84, 27);
-            this.button6.TabIndex = 7;
-            this.button6.Tag = "导出";
-            this.button6.Text = "导出";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
             // frmSpZyd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 584);
+            this.ClientSize = new System.Drawing.Size(1068, 658);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmSpZyd";
             this.Tag = "93";

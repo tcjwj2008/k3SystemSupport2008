@@ -270,8 +270,11 @@ namespace YXK3FZ
 				//肉业食品经营表
         private void button14_Click(object sender, EventArgs e)
         {
-            frmRSjy frmRSjy = new frmRSjy();
-            frmRSjy.Show();  
+            frmNewRSjy frmNewRSjy = new frmNewRSjy();
+            frmNewRSjy.Show();  
+
+            //frmRSjy frmRSjy = new frmRSjy();
+            //frmRSjy.Show();  
 
 
         }
@@ -857,9 +860,7 @@ namespace YXK3FZ
         private void tabControl3_DrawItem(object sender, DrawItemEventArgs e)
         {
             //实现tabControl的文字从左到右
-
             Rectangle tabTextArea = tabControl3.GetTabRect(e.Index);
-
             Graphics g = e.Graphics;
             StringFormat sf = new StringFormat();
             sf.LineAlignment = StringAlignment.Center;

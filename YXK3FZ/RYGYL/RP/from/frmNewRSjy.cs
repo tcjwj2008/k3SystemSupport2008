@@ -230,6 +230,7 @@ namespace YXK3FZ.RP.from
 						dt.Rows.Add(dtr2);
 
 					}
+                    NewMethod(dt);
 
 				}
 
@@ -247,6 +248,417 @@ namespace YXK3FZ.RP.from
 
 
 		}
+
+
+
+        private void NewMethod(DataTable dt)
+        {
+            string sDate = string.Empty;
+            string sDepartCode = string.Empty;
+            string sDepartName = string.Empty;
+
+            string sText = string.Empty;  //短信内容
+            string sDepartText = string.Empty; //具体部门短信
+            string sSQL = string.Empty;  //查询语句
+            string sSQL2 = string.Empty;  //查询语句
+
+            decimal dDepartMoney = 0; //具体部门的金额
+            decimal dALLMoney = 0;    //所有部门的金额  
+            decimal dMoney = 0;
+
+            decimal dMonthMoney = 0; //本月累计金额
+
+            string sb = string.Empty;
+
+            if (dt.Rows.Count > 0)
+            {
+                sDate = dt.Rows[0]["日期"].ToString();
+                sDepartCode = dt.Rows[0]["部门代码"].ToString();
+                sDepartName = dt.Rows[0]["部门名称"].ToString();
+
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    sDate = dt.Rows[i]["日期"].ToString();
+                    sDepartCode = dt.Rows[i]["部门代码"].ToString();
+                    sDepartName = dt.Rows[i]["部门名称"].ToString();
+
+                    sSQL = string.Empty; //清空
+                    sSQL2 = string.Empty; //清空
+
+
+                    //查门店管理部门店经营日报表
+                    if (sDepartCode == "10.11") // 部门代码:10.11
+                    {
+                        sSQL = "  SELECT CAST( (ISNULL(SUM(R.FSubAllBankAmount),0)+ISNULL(SUM(x.FSubSJAmount),0))/10000 as decimal(18,2) ) FROM t_SubCustomSell R  ";
+                        sSQL += " LEFT JOIN t_SubCustomSellMX X ON R.FID=X.FID ";
+                        sSQL += " WHERE r.FDate='" + sDate + "' ";
+                        //单个语句有存在，则只计算单个语句－门店管理部的经营金额
+                        dDepartMoney = CalculatePrice(sSQL, string.Empty);
+                        //合计到所有部门金额中去
+                        dALLMoney = dALLMoney + dDepartMoney;
+                        sDepartName = sDepartName + "" + dDepartMoney + "万元。";
+                        sText = sText + sDepartName;
+
+                    }
+                    //白条批发部
+                    else if (sDepartCode == "10.12") // 部门代码:10.12
+                    {
+                        sSQL = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate='" + sDate + "' ";
+                        sSQL += " and FBillType=1000 ";
+                        sSQL += " AND FExplanation not like '%礼券%'";
+                        sSQL += " AND isnull(FAccountID,'')<>''";
+                        sSQL += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.12') ";
+
+                        sSQL2 = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate='" + sDate + "' ";
+                        sSQL2 += " and FBillType=0 ";
+                        sSQL2 += " AND isnull(FAccountID,'')<>''";
+                        sSQL2 += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.12') ";
+
+
+                        dDepartMoney = CalculatePrice(sSQL, sSQL) + CalculatePrice(sSQL2, sSQL2);
+                        dALLMoney = dALLMoney + dDepartMoney;
+
+                        sDepartName = sDepartName + "" + dDepartMoney + "万元。";
+                        sText = sText + sDepartName;
+
+                    }
+                    //加盟开发部
+                    else if (sDepartCode == "10.13") // 部门代码:10.13
+                    {
+                        sSQL = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate='" + sDate + "' ";
+                        sSQL += " and FBillType=1000 ";
+                        sSQL += " AND FExplanation not like '%礼券%'";
+                        sSQL += " AND isnull(FAccountID,'')<>''";
+                        sSQL += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.13') ";
+
+
+                        sSQL2 = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate='" + sDate + "' ";
+                        sSQL2 += " and FBillType=0 ";
+                        sSQL2 += " AND isnull(FAccountID,'')<>''";
+                        sSQL2 += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.13') ";
+
+                        dDepartMoney = CalculatePrice(sSQL, sSQL) + CalculatePrice(sSQL2, sSQL2);
+                        dALLMoney = dALLMoney + dDepartMoney;
+
+                        sDepartName = sDepartName + "" + dDepartMoney + "万元。";
+                        sText = sText + sDepartName;
+                    }
+                    //冻品销售部
+                    else if (sDepartCode == "10.14") // 部门代码:10.14
+                    {
+                        //TODO...
+                        sSQL = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate='" + sDate + "' ";
+                        sSQL += " and FBillType=1000 ";
+                        sSQL += " AND isnull(FAccountID,'')<>''";
+                        sSQL += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.14') ";
+
+
+                        sSQL2 = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate='" + sDate + "' ";
+                        sSQL2 += " and FBillType=0 ";
+                        sSQL2 += " AND isnull(FAccountID,'')<>''";
+                        sSQL2 += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.14') ";
+
+                        dDepartMoney = CalculatePrice(sSQL, sSQL) + CalculatePrice(sSQL2, sSQL2);
+                        dALLMoney = dALLMoney + dDepartMoney;
+                        sDepartName = sDepartName + "" + dDepartMoney + "万元。";
+                        sText = sText + sDepartName;
+                    }
+                    //厦门办室处
+                    else if (sDepartCode == "10.15") // 部门代码:10.15
+                    {
+                        sSQL = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate='" + sDate + "' ";
+                        sSQL += " and FBillType=1000 ";
+                        sSQL += " AND isnull(FAccountID,'')<>''";
+                        sSQL += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.15') ";
+
+
+                        sSQL2 = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate='" + sDate + "' ";
+                        sSQL2 += " and FBillType=0 ";
+                        sSQL2 += " AND isnull(FAccountID,'')<>''";
+                        sSQL2 += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.15') ";
+
+                        dDepartMoney = CalculatePrice(sSQL, sSQL) + CalculatePrice(sSQL2, sSQL2);
+                        dALLMoney = dALLMoney + dDepartMoney;
+
+                        sDepartName = sDepartName + "" + dDepartMoney + "万元。";
+                        sText = sText + sDepartName;
+                    }
+                    //福州办事处
+                    else if (sDepartCode == "10.16") // 部门代码:10.16
+                    {
+                        sSQL = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate='" + sDate + "' ";
+                        sSQL += " and FBillType=1000 ";
+                        sSQL += " AND isnull(FAccountID,'')<>''";
+                        sSQL += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.16') ";
+
+                        sSQL2 = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate='" + sDate + "' ";
+                        sSQL2 += " and FBillType=0 ";
+                        sSQL2 += " AND isnull(FAccountID,'')<>''";
+                        sSQL2 += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.16') ";
+
+                        dDepartMoney = CalculatePrice(string.Empty, sSQL) + CalculatePrice(string.Empty, sSQL2);
+                        dALLMoney = dALLMoney + dDepartMoney;
+                        sDepartName = sDepartName + "" + dDepartMoney + "万元。";
+                        sText = sText + sDepartName;
+                    }
+                    //驻外办事处
+                    else if (sDepartCode == "10.17") // 部门代码:10.17
+                    {
+                        sSQL = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate='" + sDate + "' ";
+                        sSQL += " and FBillType=1000 ";
+                        sSQL += " AND isnull(FAccountID,'')<>''";
+                        sSQL += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.17') ";
+
+
+                        sSQL2 = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate='" + sDate + "' ";
+                        sSQL2 += " and FBillType=0 ";
+                        sSQL2 += " AND isnull(FAccountID,'')<>''";
+                        sSQL2 += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.17') ";
+
+                        dDepartMoney = CalculatePrice(sSQL, sSQL) + CalculatePrice(sSQL2, sSQL2);
+                        dALLMoney = dALLMoney + dDepartMoney;
+
+                        sDepartName = sDepartName + "" + dDepartMoney + "万元。";
+                        sText = sText + sDepartName;
+                    }
+                    //华南办事处
+                    else if (sDepartCode == "10.18") // 部门代码:10.18
+                    {
+                        sSQL = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate='" + sDate + "' ";
+                        sSQL += " and FBillType=1000 ";
+                        sSQL += " AND isnull(FAccountID,'')<>''";
+                        sSQL += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.18') ";
+                        dDepartMoney = CalculatePrice(sSQL, sSQL);
+                        dALLMoney = dALLMoney + dDepartMoney;
+                        sDepartName = sDepartName + "" + dDepartMoney + "万元。";
+                        sText = sText + sDepartName;
+                    }
+                    //小副产品
+                    else if (sDepartCode == "10.19") // 部门代码:10.19
+                    {
+                        //TODO...
+                        sSQL = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate='" + sDate + "' ";
+                        sSQL += " and FBillType=1000 ";
+                        sSQL += " AND isnull(FAccountID,'')<>''";
+                        sSQL += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.19') ";
+
+
+                        sSQL2 = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate='" + sDate + "' ";
+                        sSQL2 += " and FBillType=0 ";
+                        sSQL2 += " AND isnull(FAccountID,'')<>''";
+                        sSQL2 += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.19') ";
+
+                        dDepartMoney = CalculatePrice(sSQL, sSQL) + CalculatePrice(sSQL2, sSQL2);
+                        dALLMoney = dALLMoney + dDepartMoney;
+
+                        sDepartName = sDepartName + "" + dDepartMoney + "万元。";
+                        sText = sText + sDepartName;
+                    }
+
+
+                    if (sDepartCode == "本日小计")
+                    {
+                        sb += sDate + "肉品产业营销部回款情况：" + sText + "合计:" + dALLMoney + "万元。" + "\r\n";
+
+                        dMoney = dMoney + dALLMoney;
+
+                        sText = string.Empty;
+                        dALLMoney = 0;
+                        dDepartMoney = 0;
+                    }
+
+                }
+
+                this.textBox3.Text = sb.ToString() + "\r\n" + "总合计：" + dMoney + "万元。";
+
+                string sDate1 = string.Empty;
+                string sDate2 = string.Empty;
+
+                sDate2 = Convert.ToDateTime(dateTimePicker2.Text).ToString("yyyy-MM-dd");
+                sDate1 = Convert.ToDateTime(dateTimePicker2.Text).ToString("yyyy-MM") + "-01";
+
+
+
+                this.textBox3.Text = this.textBox3.Text + "\r\n" + "本月累计回款金额：" + getCurrentMonthMoney(sDate1, sDate2) + "万元。";
+                //本月累计回款方法
+                //getCurrentMonthMoney
+            }
+        }
+
+        private decimal getCurrentMonthMoney(string sDate, string sDate2)
+        {
+            decimal dMonthMoney = 0; //本月累计金额
+
+            string sSQL = string.Empty;  //食品查询语句
+            string sSQL2 = string.Empty;  //肉业查询语句
+
+            sSQL = "  SELECT CAST( (ISNULL(SUM(R.FSubAllBankAmount),0)+ISNULL(SUM(x.FSubSJAmount),0))/10000 as decimal(18,2) ) FROM t_SubCustomSell R  ";
+            sSQL += " LEFT JOIN t_SubCustomSellMX X ON R.FID=X.FID ";
+            sSQL += " WHERE r.FDate>='" + sDate + "' and r.FDate<='" + sDate2 + "' ";
+            dMonthMoney += CalculatePrice(sSQL, string.Empty);
+
+            sSQL = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate>='" + sDate + "' and FFincDate<='" + sDate2 + "'  ";
+            sSQL += " and FBillType=1000 ";
+            sSQL += " AND FExplanation not like '%礼券%'";
+            sSQL += " AND isnull(FAccountID,'')<>''";
+            sSQL += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.12') ";
+
+            sSQL2 = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate>='" + sDate + "' and FFincDate<='" + sDate2 + "'  ";
+            sSQL2 += " and FBillType=0 ";
+            sSQL2 += " AND isnull(FAccountID,'')<>''";
+            sSQL2 += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.12') ";
+
+            dMonthMoney += CalculatePrice(sSQL, sSQL) + CalculatePrice(sSQL2, sSQL2);
+
+            sSQL = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate>='" + sDate + "' and FFincDate<='" + sDate2 + "'   ";
+            sSQL += " and FBillType=1000 ";
+            sSQL += " AND FExplanation not like '%礼券%'";
+            sSQL += " AND isnull(FAccountID,'')<>''";
+            sSQL += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.13') ";
+
+            sSQL2 = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate>='" + sDate + "'  and FFincDate<='" + sDate2 + "'  ";
+            sSQL2 += " and FBillType=0 ";
+            sSQL2 += " AND isnull(FAccountID,'')<>''";
+            sSQL2 += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.13') ";
+
+            dMonthMoney += CalculatePrice(sSQL, sSQL) + CalculatePrice(sSQL2, sSQL2);
+
+
+
+            sSQL = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate>='" + sDate + "'  and FFincDate<='" + sDate2 + "'  ";
+            sSQL += " and FBillType=1000 ";
+            sSQL += " AND isnull(FAccountID,'')<>''";
+            sSQL += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.14') ";
+
+
+            sSQL2 = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate>='" + sDate + "'  and FFincDate<='" + sDate2 + "'  ";
+            sSQL2 += " and FBillType=0 ";
+            sSQL2 += " AND isnull(FAccountID,'')<>''";
+            sSQL2 += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.14') ";
+
+            dMonthMoney += CalculatePrice(sSQL, sSQL) + CalculatePrice(sSQL2, sSQL2);
+
+
+
+            sSQL = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate>='" + sDate + "'  and FFincDate<='" + sDate2 + "'  ";
+            sSQL += " and FBillType=1000 ";
+            sSQL += " AND isnull(FAccountID,'')<>''";
+            sSQL += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.15') ";
+
+
+            sSQL2 = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate>='" + sDate + "'  and FFincDate<='" + sDate2 + "'  ";
+            sSQL2 += " and FBillType=0 ";
+            sSQL2 += " AND isnull(FAccountID,'')<>''";
+            sSQL2 += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.15') ";
+
+            dMonthMoney += CalculatePrice(sSQL, sSQL) + CalculatePrice(sSQL2, sSQL2);
+
+
+            sSQL = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate>='" + sDate + "'  and FFincDate<='" + sDate2 + "'  ";
+            sSQL += " and FBillType=1000 ";
+            sSQL += " AND isnull(FAccountID,'')<>''";
+            sSQL += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.16') ";
+
+            sSQL2 = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate>='" + sDate + "'  and FFincDate<='" + sDate2 + "'  ";
+            sSQL2 += " and FBillType=0 ";
+            sSQL2 += " AND isnull(FAccountID,'')<>''";
+            sSQL2 += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.16') ";
+
+            dMonthMoney += CalculatePrice(string.Empty, sSQL) + CalculatePrice(string.Empty, sSQL2);
+
+
+            sSQL = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate>='" + sDate + "'  and FFincDate<='" + sDate2 + "'  ";
+            sSQL += " and FBillType=1000 ";
+            sSQL += " AND isnull(FAccountID,'')<>''";
+            sSQL += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.17') ";
+
+
+            sSQL2 = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate>='" + sDate + "'  and FFincDate<='" + sDate2 + "'  ";
+            sSQL2 += " and FBillType=0 ";
+            sSQL2 += " AND isnull(FAccountID,'')<>''";
+            sSQL2 += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.17') ";
+
+            dMonthMoney += CalculatePrice(sSQL, sSQL) + CalculatePrice(sSQL2, sSQL2);
+
+
+            sSQL = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate>='" + sDate + "'  and FFincDate<='" + sDate2 + "'  ";
+            sSQL += " and FBillType=1000 ";
+            sSQL += " AND isnull(FAccountID,'')<>''";
+            sSQL += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.18') ";
+            dMonthMoney += CalculatePrice(sSQL, sSQL);
+
+
+            sSQL = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate>='" + sDate + "'  and FFincDate<='" + sDate2 + "'  ";
+            sSQL += " and FBillType=1000 ";
+            sSQL += " AND isnull(FAccountID,'')<>''";
+            sSQL += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.19') ";
+
+
+            sSQL2 = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate>='" + sDate + "'  and FFincDate<='" + sDate2 + "'  ";
+            sSQL2 += " and FBillType=0 ";
+            sSQL2 += " AND isnull(FAccountID,'')<>''";
+            sSQL2 += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.19') ";
+
+            dMonthMoney += CalculatePrice(sSQL, sSQL) + CalculatePrice(sSQL2, sSQL2);
+
+
+            return dMonthMoney;
+        }
+        /// <summary>
+        /// 计算
+        /// </summary>
+        /// <param name="sSQL1">食品</param>
+        /// <param name="sSQL2">肉业</param>
+        /// <returns></returns>
+        private decimal CalculatePrice(string sSQL1, string sSQL2)
+        {
+            if (sSQL2 != string.Empty && sSQL1 != string.Empty)
+            {
+                DataTable dttSP = dbSP.GetDataTable(sSQL1, "A");
+                DataTable dttRY = dbRY.GetDataTable(sSQL2, "B");
+                decimal A = 0;
+                decimal B = 0;
+                if (dttSP.Rows.Count > 0)
+                {
+                    A = Convert.ToDecimal(dttSP.Rows[0][0]);
+                }
+                if (dttRY.Rows.Count > 0)
+                {
+                    B = Convert.ToDecimal(dttRY.Rows[0][0]);
+                }
+
+                return A + B;
+            }
+            else
+            {
+                if (sSQL1 != string.Empty && sSQL2 == string.Empty)
+                {
+                    DataTable dttSP = dbSP.GetDataTable(sSQL1, "A");
+                    decimal A = 0;
+                    if (dttSP.Rows.Count > 0)
+                    {
+                        A = Convert.ToDecimal(dttSP.Rows[0][0]);
+                    }
+                    return A;
+                }
+                else if (sSQL2 != string.Empty && sSQL1 == string.Empty)
+                {
+                    DataTable dttRY = dbRY.GetDataTable(sSQL2, "B");
+                    decimal B = 0;
+                    if (dttRY.Rows.Count > 0)
+                    {
+                        B = Convert.ToDecimal(dttRY.Rows[0][0]);
+                    }
+                    return B;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+
+        }
+
 
 		private void button3_Click(object sender, EventArgs e) //导入成本
 		{
@@ -552,7 +964,137 @@ namespace YXK3FZ.RP.from
 		private void button5_Click(object sender, EventArgs e)
 		{
 			CommExcel.ExportExcel("", dataGridView1, true);
-		}
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //2015-02-01福州办经营情况:销量7602KG、收入114078元、成本110671元、毛利3407元；本月累计销量7602KG、毛利3407元。
+
+            //this.textBox3.Text = string.Empty;
+
+            if (this.dataGridView1[2, e.RowIndex].Value.ToString() != "")
+            {
+                this.textBox2.Text = this.dataGridView1[0, e.RowIndex].Value.ToString() + "" +
+                                     this.dataGridView1[2, e.RowIndex].Value.ToString() + "经营情况:";
+
+                if (this.dataGridView1[1, e.RowIndex].Value.ToString() == "10.12" || this.dataGridView1[1, e.RowIndex].Value.ToString() == "10.13" || this.dataGridView1[1, e.RowIndex].Value.ToString() == "10.11")
+                {
+
+                    if (this.dataGridView1[3, e.RowIndex].Value.ToString() != "")
+                    {
+                        this.textBox2.Text = this.textBox2.Text + "头数:" + Math.Round(double.Parse(this.dataGridView1[3, e.RowIndex].Value.ToString()), 0) + "头,";
+                    }
+
+                }
+
+                this.textBox2.Text = this.textBox2.Text + "销量" +
+                                 Math.Round(double.Parse(this.dataGridView1[4, e.RowIndex].Value.ToString()), 0) + "KG、收入:" +
+                                 Math.Round(double.Parse(this.dataGridView1[5, e.RowIndex].Value.ToString()), 0) + "元、成本" +
+                                 Math.Round(double.Parse(this.dataGridView1[6, e.RowIndex].Value.ToString()), 0) + "元、毛利" +
+                                 Math.Round(double.Parse(this.dataGridView1[7, e.RowIndex].Value.ToString()), 0) + "元、";
+                if (this.dataGridView1[1, e.RowIndex].Value.ToString() == "10.12" || this.dataGridView1[1, e.RowIndex].Value.ToString() == "10.13" || this.dataGridView1[1, e.RowIndex].Value.ToString() == "10.11")
+                {
+                    if (this.dataGridView1[8, e.RowIndex].Value.ToString() != "")
+                    {
+                        this.textBox2.Text = this.textBox2.Text + "单头毛利:" +
+                                                 Math.Round(double.Parse(this.dataGridView1[8, e.RowIndex].Value.ToString()), 0) + "元、";
+                    }
+                }
+
+                //本月截止到当前日期的合计
+
+                DataSet ds2 = new DataSet();
+                SqlParameter param2 = new SqlParameter("@EndDate", SqlDbType.VarChar);
+                param2.Value = this.dataGridView1[0, e.RowIndex].Value.ToString();
+                SqlParameter param3 = new SqlParameter("@fdepnumber", SqlDbType.VarChar); //部门代码
+                param3.Value = this.dataGridView1[1, e.RowIndex].Value.ToString();
+
+                string sFdepartName = this.dataGridView1[2, e.RowIndex].Value.ToString(); //部门名称
+
+
+                //创建泛型
+                List<SqlParameter> parameters = new List<SqlParameter>();
+
+                parameters.Add(param2);
+                parameters.Add(param3);
+
+
+                //把泛型中的元素复制到数组中
+                SqlParameter[] inputParameters = parameters.ToArray();
+                try
+                {
+                    if (sFdepartName == "门店管理部(羊)")
+                    {
+                        ds2 = db.GetProcDataSet("sp_sel_rsjybBUHJ_sheep", inputParameters);
+                    }
+                    else
+                    {
+                        ds2 = db.GetProcDataSet("sp_sel_rsjybBUHJ", inputParameters);
+                    }
+                    this.dataGridView2.DataSource = ds2.Tables[0];
+                    if (ds2.Tables[0].Rows.Count > 0 && this.dataGridView2[4, 0].Value.ToString() != "" && this.dataGridView2[7, 0].Value.ToString() != "")
+                    {
+                        this.textBox2.Text = this.textBox2.Text + "本月累计销量:" +
+                           Math.Round(double.Parse(this.dataGridView2[4, 0].Value.ToString()), 0) + "KG、毛利：" +
+                           Math.Round(double.Parse(this.dataGridView2[7, 0].Value.ToString()), 0) + "元。";
+                    }
+
+                }
+                catch (Exception err)
+                {
+
+                    MessageBox.Show("读取数据失败！" + err.ToString());
+                    //this.toolStripStatusLabel1.Text = " 读取合计数据失败.";
+
+                }
+
+                if (sFdepartName == "门店管理部(羊)")
+                {
+
+
+                    if (this.dataGridView1[3, e.RowIndex].Value.ToString() != "")
+                    {
+
+
+                        this.textBox2.Text = this.textBox2.Text + "当天屠宰:" +
+                                                                                    this.dataGridView1[3, e.RowIndex].Value.ToString() + "头、";
+
+                    }
+
+                    if (this.dataGridView2.CurrentRow.Cells["头数"].Value.ToString() != "")
+                    {
+                        this.textBox2.Text = this.textBox2.Text + "当月累计屠宰头数:" + this.dataGridView2.CurrentRow.Cells["头数"].Value + "头.";
+                        //Math.Round(double.Parse(this.dataGridView2[3, e.RowIndex].Value.ToString()), 0) + "头.";
+
+                    }
+
+                }
+                else
+                {
+                    if (this.dataGridView1[9, e.RowIndex].Value.ToString() != "")
+                    {
+                        this.textBox2.Text = this.textBox2.Text + "当天屠宰:" +
+                                                                                    Math.Round(double.Parse(this.dataGridView1[9, e.RowIndex].Value.ToString()), 0) + "头、";
+                    }
+                    string sSQL = " SELECT  ISNULL(SUM(ISNULL(FDayHeadNum,0)),0) AS TotalCount FROM  yx_rs_DayHeadNum where FDate<='" + this.dataGridView1[0, e.RowIndex].Value.ToString() + "'  and  SUBSTRING(CONVERT(VARCHAR(12),fDate,23),1,7) ='" + this.dataGridView1[0, e.RowIndex].Value.ToString().Substring(0, 7) + "' ";
+                    DataTable dttTemp = db.GetDataTable(sSQL, "aa");
+
+                    if (dttTemp.Rows[0][0].ToString() != "")
+                    {
+                        this.textBox2.Text = this.textBox2.Text + "当月累计屠宰头数:" +
+                                                         Math.Round(double.Parse(dttTemp.Rows[0][0].ToString()), 0) + "头。";
+                    }
+                }
+
+            }
+            else
+            {
+                this.textBox2.Text = "";
+                this.dataGridView2.DataSource = null;
+                this.textBox3.Text = string.Empty;
+
+            }
+        }
 
 	
 	
