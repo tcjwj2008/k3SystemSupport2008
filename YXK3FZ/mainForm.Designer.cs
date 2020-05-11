@@ -110,6 +110,7 @@
             this.button26 = new System.Windows.Forms.Button();
             this.button36 = new System.Windows.Forms.Button();
             this.button37 = new System.Windows.Forms.Button();
+            this.button44 = new System.Windows.Forms.Button();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.button7 = new System.Windows.Forms.Button();
@@ -1139,6 +1140,7 @@
             this.tableLayoutPanel3.Controls.Add(this.button26, 3, 2);
             this.tableLayoutPanel3.Controls.Add(this.button36, 4, 0);
             this.tableLayoutPanel3.Controls.Add(this.button37, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.button44, 0, 4);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -1360,6 +1362,17 @@
             this.button37.UseVisualStyleBackColor = true;
             this.button37.Click += new System.EventHandler(this.button37_Click);
             // 
+            // button44
+            // 
+            this.button44.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button44.Location = new System.Drawing.Point(4, 304);
+            this.button44.Name = "button44";
+            this.button44.Size = new System.Drawing.Size(162, 68);
+            this.button44.TabIndex = 20;
+            this.button44.Text = "肉业食品经营表合并";
+            this.button44.UseVisualStyleBackColor = true;
+            this.button44.Visible = false;
+            // 
             // tabPage8
             // 
             this.tabPage8.Controls.Add(this.tableLayoutPanel6);
@@ -1556,7 +1569,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.38462F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.61538F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 261F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 567F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 568F));
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.button2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.button3, 0, 1);
@@ -1578,7 +1591,7 @@
             this.button1.ImageList = this.imgMain;
             this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 88);
+            this.button1.Size = new System.Drawing.Size(65, 88);
             this.button1.TabIndex = 0;
             this.button1.Text = "用户管理";
             this.button1.UseVisualStyleBackColor = true;
@@ -1658,7 +1671,7 @@
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button2.ImageKey = "操作权限.ico";
             this.button2.ImageList = this.imgMain;
-            this.button2.Location = new System.Drawing.Point(75, 3);
+            this.button2.Location = new System.Drawing.Point(74, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(62, 88);
             this.button2.TabIndex = 1;
@@ -1674,7 +1687,7 @@
             this.button3.ImageList = this.imgMain;
             this.button3.Location = new System.Drawing.Point(3, 97);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(66, 85);
+            this.button3.Size = new System.Drawing.Size(65, 85);
             this.button3.TabIndex = 2;
             this.button3.Text = "修改密码";
             this.button3.UseVisualStyleBackColor = true;
@@ -2126,5 +2139,6 @@
                                 private System.Windows.Forms.ListBox listBox15;
                                 private System.Windows.Forms.Button button42;
                                 private System.Windows.Forms.Button button43;
+                                private System.Windows.Forms.Button button44;
     }
 }

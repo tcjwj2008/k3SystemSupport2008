@@ -16,6 +16,7 @@ using System.IO;   //特別引用流 System.IO
 using System.Collections;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Reflection;
+using YXK3FZ.RYGYL.RP.from;
 
 namespace YXK3FZ.RP.from
 {
@@ -1093,6 +1094,67 @@ namespace YXK3FZ.RP.from
                 this.dataGridView2.DataSource = null;
                 this.textBox3.Text = string.Empty;
 
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.button1.Enabled == false)
+            {
+                MessageBox.Show("没有权限");
+                return;
+
+            }
+            string name0 = this.dataGridView1.Columns[e.ColumnIndex].Name;
+            //string name1=this.dataGridView1.Columns[this.dataGridView1.CurrentCell.ColumnIndex].Name;
+
+            if ((this.dataGridView1.Rows.Count >= 1 && Ftype == 0) && (name0 == "成本"))
+            {
+
+                frmJYBMX frmJYBMX = new frmJYBMX();
+                frmJYBMX.fdate = this.dataGridView1[0, e.RowIndex].Value.ToString();
+                frmJYBMX.fdepnum = this.dataGridView1[1, e.RowIndex].Value.ToString();
+                frmJYBMX.Show();
+            }
+
+            //添加收入的明细核对值
+
+            if ((this.dataGridView1.Rows.Count >= 1 && Ftype == 0) && (name0 == "收入"))
+            {
+
+                //frmStoreAvenue frmStoreAvenue = new frmStoreAvenue();
+                //frmStoreAvenue.fdate = this.dataGridView1[0, e.RowIndex].Value.ToString();
+                //frmStoreAvenue.fdepnum = this.dataGridView1[1, e.RowIndex].Value.ToString();
+                //frmStoreAvenue.Show();
+            }
+
+
+            //添加头数 数量的明细核对值
+
+            if ((this.dataGridView1.Rows.Count >= 1 && Ftype == 0) && (name0 == "头数"))
+            {
+
+                //frmStoreTS frmStoreTS = new frmStoreTS();
+                //frmStoreTS.fdate = this.dataGridView1[0, e.RowIndex].Value.ToString();
+                //frmStoreTS.fdepnum = this.dataGridView1[1, e.RowIndex].Value.ToString();
+                //frmStoreTS.Show();
+            }
+
+
+
+            //添加头数 数量的明细核对值
+
+            if ((this.dataGridView1.Rows.Count >= 1 && Ftype == 0) && (name0 == "数量"))
+            {
+                //frmStoreWeight frmStoreTS = new frmStoreWeight();
+                //frmStoreTS.fdate = this.dataGridView1[0, e.RowIndex].Value.ToString();
+                //frmStoreTS.fdepnum = this.dataGridView1[1, e.RowIndex].Value.ToString();
+                //frmStoreTS.Show();
             }
         }
 
