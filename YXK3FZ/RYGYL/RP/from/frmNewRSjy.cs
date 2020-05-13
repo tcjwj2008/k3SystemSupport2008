@@ -969,132 +969,7 @@ namespace YXK3FZ.RP.from
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //2015-02-01福州办经营情况:销量7602KG、收入114078元、成本110671元、毛利3407元；本月累计销量7602KG、毛利3407元。
-
-            //this.textBox3.Text = string.Empty;
-
-            if (this.dataGridView1[2, e.RowIndex].Value.ToString() != "")
-            {
-                this.textBox2.Text = this.dataGridView1[0, e.RowIndex].Value.ToString() + "" +
-                                     this.dataGridView1[2, e.RowIndex].Value.ToString() + "经营情况:";
-
-                if (this.dataGridView1[1, e.RowIndex].Value.ToString() == "10.12" || this.dataGridView1[1, e.RowIndex].Value.ToString() == "10.13" || this.dataGridView1[1, e.RowIndex].Value.ToString() == "10.11")
-                {
-
-                    if (this.dataGridView1[3, e.RowIndex].Value.ToString() != "")
-                    {
-                        this.textBox2.Text = this.textBox2.Text + "头数:" + Math.Round(double.Parse(this.dataGridView1[3, e.RowIndex].Value.ToString()), 0) + "头,";
-                    }
-
-                }
-
-                this.textBox2.Text = this.textBox2.Text + "销量" +
-                                 Math.Round(double.Parse(this.dataGridView1[4, e.RowIndex].Value.ToString()), 0) + "KG、收入:" +
-                                 Math.Round(double.Parse(this.dataGridView1[5, e.RowIndex].Value.ToString()), 0) + "元、成本" +
-                                 Math.Round(double.Parse(this.dataGridView1[6, e.RowIndex].Value.ToString()), 0) + "元、毛利" +
-                                 Math.Round(double.Parse(this.dataGridView1[7, e.RowIndex].Value.ToString()), 0) + "元、";
-                if (this.dataGridView1[1, e.RowIndex].Value.ToString() == "10.12" || this.dataGridView1[1, e.RowIndex].Value.ToString() == "10.13" || this.dataGridView1[1, e.RowIndex].Value.ToString() == "10.11")
-                {
-                    if (this.dataGridView1[8, e.RowIndex].Value.ToString() != "")
-                    {
-                        this.textBox2.Text = this.textBox2.Text + "单头毛利:" +
-                                                 Math.Round(double.Parse(this.dataGridView1[8, e.RowIndex].Value.ToString()), 0) + "元、";
-                    }
-                }
-
-                //本月截止到当前日期的合计
-
-                DataSet ds2 = new DataSet();
-                SqlParameter param2 = new SqlParameter("@EndDate", SqlDbType.VarChar);
-                param2.Value = this.dataGridView1[0, e.RowIndex].Value.ToString();
-                SqlParameter param3 = new SqlParameter("@fdepnumber", SqlDbType.VarChar); //部门代码
-                param3.Value = this.dataGridView1[1, e.RowIndex].Value.ToString();
-
-                string sFdepartName = this.dataGridView1[2, e.RowIndex].Value.ToString(); //部门名称
-
-
-                //创建泛型
-                List<SqlParameter> parameters = new List<SqlParameter>();
-
-                parameters.Add(param2);
-                parameters.Add(param3);
-
-
-                //把泛型中的元素复制到数组中
-                SqlParameter[] inputParameters = parameters.ToArray();
-                try
-                {
-                    if (sFdepartName == "门店管理部(羊)")
-                    {
-                        ds2 = db.GetProcDataSet("sp_sel_rsjybBUHJ_sheep", inputParameters);
-                    }
-                    else
-                    {
-                        ds2 = db.GetProcDataSet("sp_sel_rsjybBUHJ", inputParameters);
-                    }
-                    this.dataGridView2.DataSource = ds2.Tables[0];
-                    if (ds2.Tables[0].Rows.Count > 0 && this.dataGridView2[4, 0].Value.ToString() != "" && this.dataGridView2[7, 0].Value.ToString() != "")
-                    {
-                        this.textBox2.Text = this.textBox2.Text + "本月累计销量:" +
-                           Math.Round(double.Parse(this.dataGridView2[4, 0].Value.ToString()), 0) + "KG、毛利：" +
-                           Math.Round(double.Parse(this.dataGridView2[7, 0].Value.ToString()), 0) + "元。";
-                    }
-
-                }
-                catch (Exception err)
-                {
-
-                    MessageBox.Show("读取数据失败！" + err.ToString());
-                    //this.toolStripStatusLabel1.Text = " 读取合计数据失败.";
-
-                }
-
-                if (sFdepartName == "门店管理部(羊)")
-                {
-
-
-                    if (this.dataGridView1[3, e.RowIndex].Value.ToString() != "")
-                    {
-
-
-                        this.textBox2.Text = this.textBox2.Text + "当天屠宰:" +
-                                                                                    this.dataGridView1[3, e.RowIndex].Value.ToString() + "头、";
-
-                    }
-
-                    if (this.dataGridView2.CurrentRow.Cells["头数"].Value.ToString() != "")
-                    {
-                        this.textBox2.Text = this.textBox2.Text + "当月累计屠宰头数:" + this.dataGridView2.CurrentRow.Cells["头数"].Value + "头.";
-                        //Math.Round(double.Parse(this.dataGridView2[3, e.RowIndex].Value.ToString()), 0) + "头.";
-
-                    }
-
-                }
-                else
-                {
-                    if (this.dataGridView1[9, e.RowIndex].Value.ToString() != "")
-                    {
-                        this.textBox2.Text = this.textBox2.Text + "当天屠宰:" +
-                                                                                    Math.Round(double.Parse(this.dataGridView1[9, e.RowIndex].Value.ToString()), 0) + "头、";
-                    }
-                    string sSQL = " SELECT  ISNULL(SUM(ISNULL(FDayHeadNum,0)),0) AS TotalCount FROM  yx_rs_DayHeadNum where FDate<='" + this.dataGridView1[0, e.RowIndex].Value.ToString() + "'  and  SUBSTRING(CONVERT(VARCHAR(12),fDate,23),1,7) ='" + this.dataGridView1[0, e.RowIndex].Value.ToString().Substring(0, 7) + "' ";
-                    DataTable dttTemp = db.GetDataTable(sSQL, "aa");
-
-                    if (dttTemp.Rows[0][0].ToString() != "")
-                    {
-                        this.textBox2.Text = this.textBox2.Text + "当月累计屠宰头数:" +
-                                                         Math.Round(double.Parse(dttTemp.Rows[0][0].ToString()), 0) + "头。";
-                    }
-                }
-
-            }
-            else
-            {
-                this.textBox2.Text = "";
-                this.dataGridView2.DataSource = null;
-                this.textBox3.Text = string.Empty;
-
-            }
+     
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -1104,6 +979,7 @@ namespace YXK3FZ.RP.from
 
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             if (this.button1.Enabled == false)
             {
                 MessageBox.Show("没有权限");
@@ -1111,51 +987,207 @@ namespace YXK3FZ.RP.from
 
             }
             string name0 = this.dataGridView1.Columns[e.ColumnIndex].Name;
-            //string name1=this.dataGridView1.Columns[this.dataGridView1.CurrentCell.ColumnIndex].Name;
+
+            if ((this.dataGridView1.Rows.Count >= 1 && Ftype == 0) && (name0 == "日期"))
+            {
+
+                //2015-02-01福州办经营情况:销量7602KG、收入114078元、成本110671元、毛利3407元；本月累计销量7602KG、毛利3407元。
+
+                //this.textBox3.Text = string.Empty;
+
+                if (this.dataGridView1[2, e.RowIndex].Value.ToString() != "")
+                {
+                    this.textBox2.Text = this.dataGridView1[0, e.RowIndex].Value.ToString() + "" +
+                                         this.dataGridView1[2, e.RowIndex].Value.ToString() + "经营情况:";
+
+                    if (this.dataGridView1[1, e.RowIndex].Value.ToString() == "10.12" || this.dataGridView1[1, e.RowIndex].Value.ToString() == "10.13" || this.dataGridView1[1, e.RowIndex].Value.ToString() == "10.11")
+                    {
+
+                        if (this.dataGridView1[3, e.RowIndex].Value.ToString() != "")
+                        {
+                            this.textBox2.Text = this.textBox2.Text + "头数:" + Math.Round(double.Parse(this.dataGridView1[3, e.RowIndex].Value.ToString()), 0) + "头,";
+                        }
+
+                    }
+
+                    this.textBox2.Text = this.textBox2.Text + "销量" +
+                                     Math.Round(double.Parse(this.dataGridView1[4, e.RowIndex].Value.ToString()), 0) + "KG、收入:" +
+                                     Math.Round(double.Parse(this.dataGridView1[5, e.RowIndex].Value.ToString()), 0) + "元、成本" +
+                                     Math.Round(double.Parse(this.dataGridView1[6, e.RowIndex].Value.ToString()), 0) + "元、毛利" +
+                                     Math.Round(double.Parse(this.dataGridView1[7, e.RowIndex].Value.ToString()), 0) + "元、";
+                    if (this.dataGridView1[1, e.RowIndex].Value.ToString() == "10.12" || this.dataGridView1[1, e.RowIndex].Value.ToString() == "10.13" || this.dataGridView1[1, e.RowIndex].Value.ToString() == "10.11")
+                    {
+                        if (this.dataGridView1[8, e.RowIndex].Value.ToString() != "")
+                        {
+                            this.textBox2.Text = this.textBox2.Text + "单头毛利:" +
+                                                     Math.Round(double.Parse(this.dataGridView1[8, e.RowIndex].Value.ToString()), 0) + "元、";
+                        }
+                    }
+
+                    //本月截止到当前日期的合计
+
+                    DataSet ds2 = new DataSet();
+                    SqlParameter param2 = new SqlParameter("@EndDate", SqlDbType.VarChar);
+                    param2.Value = this.dataGridView1[0, e.RowIndex].Value.ToString();
+                    SqlParameter param3 = new SqlParameter("@fdepnumber", SqlDbType.VarChar); //部门代码
+                    param3.Value = this.dataGridView1[1, e.RowIndex].Value.ToString();
+
+                    string sFdepartName = this.dataGridView1[2, e.RowIndex].Value.ToString(); //部门名称
+
+
+                    //创建泛型
+                    List<SqlParameter> parameters = new List<SqlParameter>();
+
+                    parameters.Add(param2);
+                    parameters.Add(param3);
+
+
+                    //把泛型中的元素复制到数组中
+                    SqlParameter[] inputParameters = parameters.ToArray();
+                    try
+                    {
+                        if (sFdepartName == "门店管理部(羊)")
+                        {
+                            ds2 = db.GetProcDataSet("sp_sel_rsjybBUHJ_sheep", inputParameters);
+                        }
+                        else
+                        {
+                            ds2 = db.GetProcDataSet("sp_sel_rsjybBUHJ", inputParameters);
+                        }
+                        this.dataGridView2.DataSource = ds2.Tables[0];
+                        if (ds2.Tables[0].Rows.Count > 0 && this.dataGridView2[4, 0].Value.ToString() != "" && this.dataGridView2[7, 0].Value.ToString() != "")
+                        {
+                            this.textBox2.Text = this.textBox2.Text + "本月累计销量:" +
+                               Math.Round(double.Parse(this.dataGridView2[4, 0].Value.ToString()), 0) + "KG、毛利：" +
+                               Math.Round(double.Parse(this.dataGridView2[7, 0].Value.ToString()), 0) + "元。";
+                        }
+
+                    }
+                    catch (Exception err)
+                    {
+
+                        MessageBox.Show("读取数据失败！" + err.ToString());
+                        //this.toolStripStatusLabel1.Text = " 读取合计数据失败.";
+
+                    }
+
+                    if (sFdepartName == "门店管理部(羊)")
+                    {
+
+
+                        if (this.dataGridView1[3, e.RowIndex].Value.ToString() != "")
+                        {
+
+
+                            this.textBox2.Text = this.textBox2.Text + "当天屠宰:" +
+                                                                                        this.dataGridView1[3, e.RowIndex].Value.ToString() + "头、";
+
+                        }
+
+                        if (this.dataGridView2.CurrentRow.Cells["头数"].Value.ToString() != "")
+                        {
+                            this.textBox2.Text = this.textBox2.Text + "当月累计屠宰头数:" + this.dataGridView2.CurrentRow.Cells["头数"].Value + "头.";
+                            //Math.Round(double.Parse(this.dataGridView2[3, e.RowIndex].Value.ToString()), 0) + "头.";
+
+                        }
+
+                    }
+                    else
+                    {
+                        if (this.dataGridView1[9, e.RowIndex].Value.ToString() != "")
+                        {
+                            this.textBox2.Text = this.textBox2.Text + "当天屠宰:" +
+                                                                                        Math.Round(double.Parse(this.dataGridView1[9, e.RowIndex].Value.ToString()), 0) + "头、";
+                        }
+                        string sSQL = " SELECT  ISNULL(SUM(ISNULL(FDayHeadNum,0)),0) AS TotalCount FROM  yx_rs_DayHeadNum where FDate<='" + this.dataGridView1[0, e.RowIndex].Value.ToString() + "'  and  SUBSTRING(CONVERT(VARCHAR(12),fDate,23),1,7) ='" + this.dataGridView1[0, e.RowIndex].Value.ToString().Substring(0, 7) + "' ";
+                        DataTable dttTemp = db.GetDataTable(sSQL, "aa");
+
+                        if (dttTemp.Rows[0][0].ToString() != "")
+                        {
+                            this.textBox2.Text = this.textBox2.Text + "当月累计屠宰头数:" +
+                                                             Math.Round(double.Parse(dttTemp.Rows[0][0].ToString()), 0) + "头。";
+                        }
+                    }
+
+                }
+                else
+                {
+                    this.textBox2.Text = "";
+                    this.dataGridView2.DataSource = null;
+                    this.textBox3.Text = string.Empty;
+
+                }           
+            
+            
+            
+            
+            
+            }
 
             if ((this.dataGridView1.Rows.Count >= 1 && Ftype == 0) && (name0 == "成本"))
             {
-
-                frmJYBMX frmJYBMX = new frmJYBMX();
-                frmJYBMX.fdate = this.dataGridView1[0, e.RowIndex].Value.ToString();
-                frmJYBMX.fdepnum = this.dataGridView1[1, e.RowIndex].Value.ToString();
-                frmJYBMX.Show();
-            }
-
-            //添加收入的明细核对值
-
-            if ((this.dataGridView1.Rows.Count >= 1 && Ftype == 0) && (name0 == "收入"))
-            {
-
-                //frmStoreAvenue frmStoreAvenue = new frmStoreAvenue();
-                //frmStoreAvenue.fdate = this.dataGridView1[0, e.RowIndex].Value.ToString();
-                //frmStoreAvenue.fdepnum = this.dataGridView1[1, e.RowIndex].Value.ToString();
-                //frmStoreAvenue.Show();
+                if ((this.dataGridView1[1, e.RowIndex].Value.ToString() != "10.11") )
+                {
+                    frmJYBMX frmJYBMX = new frmJYBMX();
+                    frmJYBMX.fdate = this.dataGridView1[0, e.RowIndex].Value.ToString();
+                    frmJYBMX.fdepnum = this.dataGridView1[1, e.RowIndex].Value.ToString();
+                    frmJYBMX.Show();
+                }
             }
 
 
-            //添加头数 数量的明细核对值
 
+            //门店头数
             if ((this.dataGridView1.Rows.Count >= 1 && Ftype == 0) && (name0 == "头数"))
             {
-
-                //frmStoreTS frmStoreTS = new frmStoreTS();
-                //frmStoreTS.fdate = this.dataGridView1[0, e.RowIndex].Value.ToString();
-                //frmStoreTS.fdepnum = this.dataGridView1[1, e.RowIndex].Value.ToString();
-                //frmStoreTS.Show();
+                if (this.dataGridView1[1, e.RowIndex].Value.ToString()=="10.11")
+                {
+                    frmmdts frmmdts = new frmmdts();
+                    frmmdts.fdate = this.dataGridView1[0, e.RowIndex].Value.ToString();
+                    frmmdts.fdepnum = this.dataGridView1[1, e.RowIndex].Value.ToString();
+                    frmmdts.Show();
+                }
             }
-
-
-
-            //添加头数 数量的明细核对值
-
+            //门店数量
             if ((this.dataGridView1.Rows.Count >= 1 && Ftype == 0) && (name0 == "数量"))
             {
-                //frmStoreWeight frmStoreTS = new frmStoreWeight();
-                //frmStoreTS.fdate = this.dataGridView1[0, e.RowIndex].Value.ToString();
-                //frmStoreTS.fdepnum = this.dataGridView1[1, e.RowIndex].Value.ToString();
-                //frmStoreTS.Show();
+                if (this.dataGridView1[1, e.RowIndex].Value.ToString() == "10.11")
+                {
+                    frmmdsl frmmdsl = new frmmdsl();
+                    frmmdsl.fdate = this.dataGridView1[0, e.RowIndex].Value.ToString();
+                    frmmdsl.fdepnum = this.dataGridView1[1, e.RowIndex].Value.ToString();
+                    frmmdsl.Show();
+                }
             }
+
+
+            //门店收入
+            if ((this.dataGridView1.Rows.Count >= 1 && Ftype == 0) && (name0 == "收入"))
+            {
+                if (this.dataGridView1[1, e.RowIndex].Value.ToString() == "10.11")
+                {
+                    frmmdsr frmmdsr = new frmmdsr();
+                    frmmdsr.fdate = this.dataGridView1[0, e.RowIndex].Value.ToString();
+                    frmmdsr.fdepnum = this.dataGridView1[1, e.RowIndex].Value.ToString();
+                    frmmdsr.Show();
+                }
+            }
+
+            //门店成本
+            if ((this.dataGridView1.Rows.Count >= 1 && Ftype == 0) && (name0 == "成本"))
+            {
+                if (this.dataGridView1[1, e.RowIndex].Value.ToString() == "10.11")
+                {
+                    frmmdcb frmmdcb = new frmmdcb();
+                    frmmdcb.fdate = this.dataGridView1[0, e.RowIndex].Value.ToString();
+                    frmmdcb.fdepnum = this.dataGridView1[1, e.RowIndex].Value.ToString();
+                    frmmdcb.Show();
+                }
+            }
+
+
+
+      
         }
 
 	

@@ -15,29 +15,23 @@ using System.IO;   //特別引用流 System.IO
 using System.Collections;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Reflection;
-
 namespace YXK3FZ.RYGYL.RP.from
 {
-    public partial class frmJYBMX : Form
+    public partial class frmmdsr : Form
     {
-
-
         public string fdate;
         public string fdepnum;
 
         DataSet ds = new DataSet();//excel
         // DataBase db = new DataBase(PropertyClass.con_yxsp);
         DataBase db = new DataBase();
-        
-        
-
-
-        public frmJYBMX()
+        public frmmdsr()
         {
             InitializeComponent();
         }
         /// <summary>
-        /// 导出文件
+        /// 导出数据
+        /// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -225,7 +219,7 @@ namespace YXK3FZ.RYGYL.RP.from
             }
         }
 
-        private void frmJYBMX_Load(object sender, EventArgs e)
+        private void frmmdsr_Load(object sender, EventArgs e)
         {
             this.toolStripLabel1.Text = "部门：" + fdepnum;
             this.toolStripLabel2.Text = "日期：" + fdate;
@@ -245,7 +239,7 @@ namespace YXK3FZ.RYGYL.RP.from
             SqlParameter[] inputParameters = parameters.ToArray();
             try
             {
-                ds = db.GetProcDataSet("sp_sel_rsjybmx_new_qiu", inputParameters);
+                ds = db.GetProcDataSet("sp_sel_rsjybmdsr_qiu", inputParameters);
                 this.dataGridView1.DataSource = ds.Tables[0];
 
             }

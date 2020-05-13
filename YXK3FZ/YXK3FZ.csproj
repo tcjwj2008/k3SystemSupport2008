@@ -346,6 +346,22 @@
       <DependentUpon>frmJYBMX.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\RP\from\frmmdcb.resx">
+      <DependentUpon>frmmdcb.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\RP\from\frmmdsl.resx">
+      <DependentUpon>frmmdsl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\RP\from\frmmdsr.resx">
+      <DependentUpon>frmmdsr.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\RP\from\frmmdts.resx">
+      <DependentUpon>frmmdts.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="RYGYL\RP\from\frmNewJYB.resx">
       <DependentUpon>frmNewJYB.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -825,6 +841,30 @@
     </Compile>
     <Compile Include="RYGYL\RP\from\frmJYBMX.Designer.cs">
       <DependentUpon>frmJYBMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\RP\from\frmmdcb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\RP\from\frmmdcb.Designer.cs">
+      <DependentUpon>frmmdcb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\RP\from\frmmdsl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\RP\from\frmmdsl.Designer.cs">
+      <DependentUpon>frmmdsl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\RP\from\frmmdsr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\RP\from\frmmdsr.Designer.cs">
+      <DependentUpon>frmmdsr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\RP\from\frmmdts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\RP\from\frmmdts.Designer.cs">
+      <DependentUpon>frmmdts.cs</DependentUpon>
     </Compile>
     <Compile Include="RYGYL\RP\from\frmNewJYB.cs">
       <SubType>Form</SubType>

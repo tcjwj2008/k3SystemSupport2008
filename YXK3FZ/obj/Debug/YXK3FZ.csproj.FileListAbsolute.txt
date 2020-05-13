@@ -391,3 +391,7 @@ F:\k3SystemSupport2008\YXK3FZ\obj\Debug\YXK3FZ.YZGL.YZ_FYearDataByDept.resources
 F:\k3SystemSupport2008\YXK3FZ\obj\Debug\YXK3FZ.csproj.GenerateResource.Cache
 F:\k3SystemSupport2008\YXK3FZ\obj\Debug\YXK3FZ.RYGYL.RP.from.frmJYBMX.resources
 F:\k3SystemSupport2008\YXK3FZ\obj\Debug\YXK3FZ.RYGYL.RP.from.frmNewJYB.resources
+F:\k3SystemSupport2008\YXK3FZ\obj\Debug\YXK3FZ.RYGYL.RP.from.frmmdts.resources
+F:\k3SystemSupport2008\YXK3FZ\obj\Debug\YXK3FZ.RYGYL.RP.from.frmmdsl.resources
+F:\k3SystemSupport2008\YXK3FZ\obj\Debug\YXK3FZ.RYGYL.RP.from.frmmdsr.resources
+F:\k3SystemSupport2008\YXK3FZ\obj\Debug\YXK3FZ.RYGYL.RP.from.frmmdcb.resources

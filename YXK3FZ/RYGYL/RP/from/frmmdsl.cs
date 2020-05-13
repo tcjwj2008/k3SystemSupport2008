@@ -18,29 +18,23 @@ using System.Reflection;
 
 namespace YXK3FZ.RYGYL.RP.from
 {
-    public partial class frmJYBMX : Form
+    public partial class frmmdsl : Form
     {
-
-
         public string fdate;
         public string fdepnum;
 
         DataSet ds = new DataSet();//excel
         // DataBase db = new DataBase(PropertyClass.con_yxsp);
         DataBase db = new DataBase();
-        
-        
-
-
-        public frmJYBMX()
+        public frmmdsl()
         {
             InitializeComponent();
         }
-        /// <summary>
-        /// 导出文件
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+/// <summary>
+/// 导出数据
+/// </summary>
+/// <param name="sender"></param>
+/// <param name="e"></param>
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -224,8 +218,12 @@ namespace YXK3FZ.RYGYL.RP.from
 
             }
         }
-
-        private void frmJYBMX_Load(object sender, EventArgs e)
+/// <summary>
+/// 计算头数逻辑
+/// </summary>
+/// <param name="sender"></param>
+/// <param name="e"></param>
+        private void frmmdsl_Load(object sender, EventArgs e)
         {
             this.toolStripLabel1.Text = "部门：" + fdepnum;
             this.toolStripLabel2.Text = "日期：" + fdate;
@@ -245,7 +243,7 @@ namespace YXK3FZ.RYGYL.RP.from
             SqlParameter[] inputParameters = parameters.ToArray();
             try
             {
-                ds = db.GetProcDataSet("sp_sel_rsjybmx_new_qiu", inputParameters);
+                ds = db.GetProcDataSet("sp_sel_rsjybmdsl_qiu", inputParameters);
                 this.dataGridView1.DataSource = ds.Tables[0];
 
             }

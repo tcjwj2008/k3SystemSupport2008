@@ -117,11 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="richTextBox1.Text" xml:space="preserve">
-    <value>--1 需导入每日成本单价，重复导入将覆盖之前的记录
---2.1收入=数量*销售单价/1.09 成本=数量*成本单价
---2.2 肉业账套部门为10.12 10.13的收入=数量*销售单价 成本=数量*成本单价/0.89，由0.89修改为0.91(czq20190412)
---2.3 食品账套部门为10.12 10.13的收入=数量*销售单价 成本=数量*成本单价/0.89，由0.89修改为0.91(czq20190412)
---3 鼠标双击表１的日期列显示回款及短信信息　　双击表１成本列可以显示明细列表，门店管理部(头数，数量，收入，成本)双击显示明细列表</value>
-  </data>
+  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

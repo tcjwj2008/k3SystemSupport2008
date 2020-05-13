@@ -18,9 +18,8 @@ using System.Reflection;
 
 namespace YXK3FZ.RYGYL.RP.from
 {
-    public partial class frmJYBMX : Form
+    public partial class frmmdcb : Form
     {
-
 
         public string fdate;
         public string fdepnum;
@@ -28,16 +27,14 @@ namespace YXK3FZ.RYGYL.RP.from
         DataSet ds = new DataSet();//excel
         // DataBase db = new DataBase(PropertyClass.con_yxsp);
         DataBase db = new DataBase();
-        
-        
 
 
-        public frmJYBMX()
+        public frmmdcb()
         {
             InitializeComponent();
         }
         /// <summary>
-        /// 导出文件
+        /// 导出操作
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -224,8 +221,12 @@ namespace YXK3FZ.RYGYL.RP.from
 
             }
         }
-
-        private void frmJYBMX_Load(object sender, EventArgs e)
+        /// <summary>
+        /// 加载窗体
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void frmmdcb_Load(object sender, EventArgs e)
         {
             this.toolStripLabel1.Text = "部门：" + fdepnum;
             this.toolStripLabel2.Text = "日期：" + fdate;
@@ -245,7 +246,7 @@ namespace YXK3FZ.RYGYL.RP.from
             SqlParameter[] inputParameters = parameters.ToArray();
             try
             {
-                ds = db.GetProcDataSet("sp_sel_rsjybmx_new_qiu", inputParameters);
+                ds = db.GetProcDataSet("sp_sel_rsjybmdcb_qiu", inputParameters);
                 this.dataGridView1.DataSource = ds.Tables[0];
 
             }

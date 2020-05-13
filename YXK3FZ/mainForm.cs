@@ -270,11 +270,11 @@ namespace YXK3FZ
 				//肉业食品经营表
         private void button14_Click(object sender, EventArgs e)
         {
-            frmNewRSjy frmNewRSjy = new frmNewRSjy();
-            frmNewRSjy.Show();  
+            //frmNewRSjy frmNewRSjy = new frmNewRSjy();
+            //frmNewRSjy.Show();  
 
-            //frmRSjy frmRSjy = new frmRSjy();
-            //frmRSjy.Show();  
+            frmRSjy frmRSjy = new frmRSjy();
+            frmRSjy.Show();  
 
 
         }
