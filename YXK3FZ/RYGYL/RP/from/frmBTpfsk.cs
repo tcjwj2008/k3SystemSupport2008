@@ -53,13 +53,7 @@ namespace YXK3FZ.RP.from
 
             dt = db.GetDataTable(strCondition,"exceltab");
 
-						//DataRow dtr = dt.NewRow();
-						//dtr["市场"] = "ZZZZ";
-						//dtr["客户名称"] = "合计";
-						//dtr["礼券"] = dt.Compute("sum(礼券)", "标记='明细'");
-						//dtr["现金收款"] = dt.Compute("sum(现金收款)", "标记='明细'");
-						//dtr["银行存款"] = dt.Compute("sum(银行存款)", "标记='明细'");
-						//dt.Rows.Add(dtr);
+					
 
 
 

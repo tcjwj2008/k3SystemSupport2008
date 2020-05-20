@@ -18,6 +18,7 @@ using YXK3FZ.RP.from;
 using System.Threading;
 using System.Reflection;
 using YXK3FZ.RYGYL.RP.rpt;
+using YXK3FZ.RYGYL.RP.from;
 
 
 namespace YXK3FZ
@@ -270,11 +271,14 @@ namespace YXK3FZ
 				//肉业食品经营表
         private void button14_Click(object sender, EventArgs e)
         {
-            frmNewRSjy frmNewRSjy = new frmNewRSjy();
-            frmNewRSjy.Show();  
+            //frmNewRSjy frmNewRSjy = new frmNewRSjy();
+            //frmNewRSjy.Show();
 
             //frmRSjy frmRSjy = new frmRSjy();
             //frmRSjy.Show();  
+
+            FRMRSJYB FRMRSJYB = new FRMRSJYB();
+            FRMRSJYB.Show();
 
 
         }
