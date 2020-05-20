@@ -110,7 +110,6 @@
             this.button26 = new System.Windows.Forms.Button();
             this.button36 = new System.Windows.Forms.Button();
             this.button37 = new System.Windows.Forms.Button();
-            this.button44 = new System.Windows.Forms.Button();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.button7 = new System.Windows.Forms.Button();
@@ -153,6 +152,8 @@
             this.button45 = new System.Windows.Forms.Button();
             this.button46 = new System.Windows.Forms.Button();
             this.button47 = new System.Windows.Forms.Button();
+            this.button49 = new System.Windows.Forms.Button();
+            this.button48 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1143,7 +1144,8 @@
             this.tableLayoutPanel3.Controls.Add(this.button26, 3, 2);
             this.tableLayoutPanel3.Controls.Add(this.button36, 4, 0);
             this.tableLayoutPanel3.Controls.Add(this.button37, 1, 3);
-            this.tableLayoutPanel3.Controls.Add(this.button44, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.button49, 4, 2);
+            this.tableLayoutPanel3.Controls.Add(this.button48, 4, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -1364,17 +1366,6 @@
             this.button37.Text = "日成本外购明细";
             this.button37.UseVisualStyleBackColor = true;
             this.button37.Click += new System.EventHandler(this.button37_Click);
-            // 
-            // button44
-            // 
-            this.button44.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button44.Location = new System.Drawing.Point(4, 304);
-            this.button44.Name = "button44";
-            this.button44.Size = new System.Drawing.Size(162, 68);
-            this.button44.TabIndex = 20;
-            this.button44.Text = "肉业食品经营表合并";
-            this.button44.UseVisualStyleBackColor = true;
-            this.button44.Visible = false;
             // 
             // tabPage8
             // 
@@ -1985,6 +1976,28 @@
             this.button47.Text = "销售毛利表";
             this.button47.UseVisualStyleBackColor = true;
             // 
+            // button49
+            // 
+            this.button49.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button49.Location = new System.Drawing.Point(680, 154);
+            this.button49.Name = "button49";
+            this.button49.Size = new System.Drawing.Size(162, 68);
+            this.button49.TabIndex = 22;
+            this.button49.Text = "新经营表";
+            this.button49.UseVisualStyleBackColor = true;
+            this.button49.Click += new System.EventHandler(this.button49_Click);
+            // 
+            // button48
+            // 
+            this.button48.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button48.Location = new System.Drawing.Point(680, 79);
+            this.button48.Name = "button48";
+            this.button48.Size = new System.Drawing.Size(162, 68);
+            this.button48.TabIndex = 23;
+            this.button48.Text = "旧经营表";
+            this.button48.UseVisualStyleBackColor = true;
+            this.button48.Click += new System.EventHandler(this.button48_Click);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2175,9 +2188,10 @@
                                 private System.Windows.Forms.ListBox listBox15;
                                 private System.Windows.Forms.Button button42;
                                 private System.Windows.Forms.Button button43;
-                                private System.Windows.Forms.Button button44;
                                 private System.Windows.Forms.Button button45;
                                 private System.Windows.Forms.Button button46;
                                 private System.Windows.Forms.Button button47;
+                                private System.Windows.Forms.Button button49;
+                                private System.Windows.Forms.Button button48;
     }
 }

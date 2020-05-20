@@ -97,6 +97,7 @@ namespace YXK3FZ.RYGYL.RP.from
         /// <param name="fileName"></param>
         private void bind(string fileName)
         {
+            //this.dataGridView3.DataSource = null;
 
             string strConn = "Provider=Microsoft.ACE.OLEDB.12.0;" + "Data Source=" + fileName + ";" + "Extended Properties=Excel 8.0;";
             OleDbConnection Excel_conn = new OleDbConnection(strConn);
@@ -116,8 +117,8 @@ namespace YXK3FZ.RYGYL.RP.from
             {
 
                 da.Fill(ds);
-                this.dataGridView2Price.DataSource = ds.Tables[0];
-
+                ///this.dataGridView2Price.DataSource = ds.Tables[0];
+                this.dataGridView3.DataSource = ds.Tables[0];
                 da2.Fill(dsDayHeadNum); //填充数据集              
 
             }
@@ -137,6 +138,7 @@ namespace YXK3FZ.RYGYL.RP.from
         /// <param name="e"></param>
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
+            tabControl1.SelectedIndex = 1;
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             string excelFileName = "";
             openFileDialog1.FileName = "";
@@ -159,9 +161,11 @@ namespace YXK3FZ.RYGYL.RP.from
 
             this.label2.Text = " 正在读取表格数据......";
             List<string> strSqls = new List<string>();
-            if (this.dataGridView2Price.RowCount == 0)
+            if (this.dataGridView3.RowCount == 0)
             {
+                this.label2.Text = "没有读取到成本数据!";
                 return;
+               
             }
 
             string sSQL = string.Empty;
@@ -191,8 +195,6 @@ namespace YXK3FZ.RYGYL.RP.from
                 strSqls.Add(" INSERT INTO yx_rs_DayHeadNum_Check(FDATE,FDayHeadNum,FuserName)  VALUES  ( '" + dr["日期"].ToString() + "'," + dr["当天屠宰头数"].ToString() + ",'" + PropertyClass.OperatorName + "') ");
                 sSQL += "  INSERT INTO yx_rs_DayHeadNum_Check(FDATE,FDayHeadNum,FuserName)  VALUES  ( '" + dr["日期"].ToString() + "'," + dr["当天屠宰头数"].ToString() + ",'" + PropertyClass.OperatorName + "')";
             }
-
-
 
 
             if (!db.ExecDataBySqls(strSqls))
@@ -235,7 +237,7 @@ namespace YXK3FZ.RYGYL.RP.from
             try
             {
                 db.GetProcRow("sp_insertToyx_rs_ysprice", inputParameters2);
-                //this.toolStripStatusLabel1.Text = " 表格数据导入成功!";
+                this.label2.Text = " 表格数据导入成功!";
                 WaitFormService.CloseWaitForm();
                 MessageBox.Show("成功导入K3!", "软件提示");
                 this.dataGridView1.DataSource = null;
@@ -243,7 +245,7 @@ namespace YXK3FZ.RYGYL.RP.from
             }
             catch (Exception ex)
             {
-                //this.toolStripStatusLabel1.Text = " 表格数据导入失败!";
+                this.label2.Text = " 表格数据导入失败!";
                 WaitFormService.CloseWaitForm();
                 MessageBox.Show("导入K3失败!" + ex.ToString(), "软件提示");
 
@@ -561,6 +563,59 @@ namespace YXK3FZ.RYGYL.RP.from
                     }
 
 
+//加入10.20   2020-05-20
+
+
+                    //综合经营部
+                    else if (sDepartCode == "10.20") // 部门代码:10.20
+                    {
+                        //TODO...
+                        sSQL = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate='" + sDate + "' ";
+                        sSQL += " and FBillType=1000 ";
+                        sSQL += " AND isnull(FAccountID,'')<>''";
+                        sSQL += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.20') ";
+
+
+                        sSQL2 = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate='" + sDate + "' ";
+                        sSQL2 += " and FBillType=0 ";
+                        sSQL2 += " AND isnull(FAccountID,'')<>''";
+                        sSQL2 += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.20') ";
+
+                        dDepartMoney = CalculatePrice(sSQL, sSQL) + CalculatePrice(sSQL2, sSQL2);
+                        dALLMoney = dALLMoney + dDepartMoney;
+
+                        sDepartName = sDepartName + "" + dDepartMoney + "万元。";
+                        sText = sText + sDepartName;
+                    }
+
+
+
+                    //综合经营部
+                    else if (sDepartCode == "10.21") // 部门代码:10.20
+                    {
+                        //TODO...
+                        sSQL = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate='" + sDate + "' ";
+                        sSQL += " and FBillType=1000 ";
+                        sSQL += " AND isnull(FAccountID,'')<>''";
+                        sSQL += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.21') ";
+
+
+                        sSQL2 = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate='" + sDate + "' ";
+                        sSQL2 += " and FBillType=0 ";
+                        sSQL2 += " AND isnull(FAccountID,'')<>''";
+                        sSQL2 += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.21') ";
+
+                        dDepartMoney = CalculatePrice(sSQL, sSQL) + CalculatePrice(sSQL2, sSQL2);
+                        dALLMoney = dALLMoney + dDepartMoney;
+
+                        sDepartName = sDepartName + "" + dDepartMoney + "万元。";
+                        sText = sText + sDepartName;
+                    }
+
+
+
+
+
                     if (sDepartCode == "本日小计")
                     {
                         sb += sDate + "肉品产业营销部回款情况：" + sText + "合计:" + dALLMoney + "万元。" + "\r\n";
@@ -713,6 +768,39 @@ namespace YXK3FZ.RYGYL.RP.from
             sSQL2 += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.19') ";
 
             dMonthMoney += CalculatePrice(sSQL, sSQL) + CalculatePrice(sSQL2, sSQL2);
+
+
+
+
+            sSQL = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate>='" + sDate + "'  and FFincDate<='" + sDate2 + "'  ";
+            sSQL += " and FBillType=1000 ";
+            sSQL += " AND isnull(FAccountID,'')<>''";
+            sSQL += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.20') ";
+
+
+            sSQL2 = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate>='" + sDate + "'  and FFincDate<='" + sDate2 + "'  ";
+            sSQL2 += " and FBillType=0 ";
+            sSQL2 += " AND isnull(FAccountID,'')<>''";
+            sSQL2 += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.20') ";
+
+            dMonthMoney += CalculatePrice(sSQL, sSQL) + CalculatePrice(sSQL2, sSQL2);
+
+
+
+            sSQL = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate>='" + sDate + "'  and FFincDate<='" + sDate2 + "'  ";
+            sSQL += " and FBillType=1000 ";
+            sSQL += " AND isnull(FAccountID,'')<>''";
+            sSQL += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.21') ";
+
+
+            sSQL2 = "  SELECT CAST(ISNULL(SUM(FAmount),0)/10000 AS DECIMAL(18,2)) FROM t_RP_NewReceiveBill r WHERE FFincDate>='" + sDate + "'  and FFincDate<='" + sDate2 + "'  ";
+            sSQL2 += " and FBillType=0 ";
+            sSQL2 += " AND isnull(FAccountID,'')<>''";
+            sSQL2 += " AND EXISTS(SELECT * FROM t_Department WHERE r.FDepartment=FItemID AND FItemID<>0 and FNumber= '10.21') ";
+
+            dMonthMoney += CalculatePrice(sSQL, sSQL) + CalculatePrice(sSQL2, sSQL2);
+
+
 
 
             return dMonthMoney;
@@ -1215,6 +1303,7 @@ namespace YXK3FZ.RYGYL.RP.from
 
         private void toolStripLabel4_Click(object sender, EventArgs e)
         {
+            tabControl1.SelectedIndex = 0;
             CommExcel.ExportExcel("", dataGridView1, true);
         }
 
@@ -1230,6 +1319,7 @@ namespace YXK3FZ.RYGYL.RP.from
 
         private void toolStripLabel5_Click(object sender, EventArgs e)
         {
+            tabControl1.SelectedIndex = 1;
             CommExcel.ExportExcel("", dataGridView2Price, true);
         }
 
@@ -1430,7 +1520,7 @@ namespace YXK3FZ.RYGYL.RP.from
                 sSQL += " WHERE 1=1 ";
 
                 {
-                    sSQL += " And FNumber IN('10.11','10.12','10.13','10.14','10.15','10.16','10.17','10.19') ";
+                    sSQL += " And FNumber IN('10.11','10.12','10.13','10.14','10.15','10.16','10.17','10.19','10.20','10.21') ";
                 }
                 sSQL += " ORDER BY FNumber ";
                 DataTable dDepart = new DataTable();
@@ -1526,16 +1616,16 @@ namespace YXK3FZ.RYGYL.RP.from
             }
 
 
-            if ((this.dataGridView1.Rows.Count >= 1 && Ftype == 0) && (name0 == "成本"))
-            {
-                if ((this.dataGridView1[1, e.RowIndex].Value.ToString() != "10.11"))
-                {
-                    frmJYBMX frmJYBMX = new frmJYBMX();
-                    frmJYBMX.fdate = this.dataGridView1[0, e.RowIndex].Value.ToString();
-                    frmJYBMX.fdepnum = this.dataGridView1[1, e.RowIndex].Value.ToString();
-                    frmJYBMX.Show();
-                }
-            }
+            //if ((this.dataGridView1.Rows.Count >= 1 && Ftype == 0) && (name0 == "成本"))
+            //{
+            //    if ((this.dataGridView1[1, e.RowIndex].Value.ToString() != "10.11"))
+            //    {
+            //        frmJYBMX frmJYBMX = new frmJYBMX();
+            //        frmJYBMX.fdate = this.dataGridView1[0, e.RowIndex].Value.ToString();
+            //        frmJYBMX.fdepnum = this.dataGridView1[1, e.RowIndex].Value.ToString();
+            //        frmJYBMX.Show();
+            //    }
+            //}
 
 
 
@@ -1549,6 +1639,15 @@ namespace YXK3FZ.RYGYL.RP.from
                     frmmdts.fdepnum = this.dataGridView1[1, e.RowIndex].Value.ToString();
                     frmmdts.Show();
                 }
+                else
+                {
+                    frmJYBMX frmJYBMX = new frmJYBMX();
+                    frmJYBMX.fdate = this.dataGridView1[0, e.RowIndex].Value.ToString();
+                    frmJYBMX.fdepnum = this.dataGridView1[1, e.RowIndex].Value.ToString();
+                    frmJYBMX.Show();
+                }
+
+
             }
             //门店数量
             if ((this.dataGridView1.Rows.Count >= 1 && Ftype == 0) && (name0 == "数量"))
@@ -1559,6 +1658,13 @@ namespace YXK3FZ.RYGYL.RP.from
                     frmmdsl.fdate = this.dataGridView1[0, e.RowIndex].Value.ToString();
                     frmmdsl.fdepnum = this.dataGridView1[1, e.RowIndex].Value.ToString();
                     frmmdsl.Show();
+                }
+                else
+                {
+                    frmJYBMX frmJYBMX = new frmJYBMX();
+                    frmJYBMX.fdate = this.dataGridView1[0, e.RowIndex].Value.ToString();
+                    frmJYBMX.fdepnum = this.dataGridView1[1, e.RowIndex].Value.ToString();
+                    frmJYBMX.Show();
                 }
             }
 
@@ -1573,6 +1679,13 @@ namespace YXK3FZ.RYGYL.RP.from
                     frmmdsr.fdepnum = this.dataGridView1[1, e.RowIndex].Value.ToString();
                     frmmdsr.Show();
                 }
+                else
+                {
+                    frmJYBMX frmJYBMX = new frmJYBMX();
+                    frmJYBMX.fdate = this.dataGridView1[0, e.RowIndex].Value.ToString();
+                    frmJYBMX.fdepnum = this.dataGridView1[1, e.RowIndex].Value.ToString();
+                    frmJYBMX.Show();
+                }
             }
 
             //门店成本
@@ -1584,6 +1697,13 @@ namespace YXK3FZ.RYGYL.RP.from
                     frmmdcb.fdate = this.dataGridView1[0, e.RowIndex].Value.ToString();
                     frmmdcb.fdepnum = this.dataGridView1[1, e.RowIndex].Value.ToString();
                     frmmdcb.Show();
+                }
+                else
+                {
+                    frmJYBMX frmJYBMX = new frmJYBMX();
+                    frmJYBMX.fdate = this.dataGridView1[0, e.RowIndex].Value.ToString();
+                    frmJYBMX.fdepnum = this.dataGridView1[1, e.RowIndex].Value.ToString();
+                    frmJYBMX.Show();
                 }
             }
 

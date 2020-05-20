@@ -59,8 +59,6 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.dataGridView2Price = new System.Windows.Forms.DataGridView();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -109,6 +107,10 @@
             this.本月累计单头毛利 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.当天屠宰头数 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.当月屠宰头数 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dataGridView2Price = new System.Windows.Forms.DataGridView();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.BOTTOMLAY.SuspendLayout();
             this.midlay.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -127,8 +129,6 @@
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2Price)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.BOTTOM2.SuspendLayout();
@@ -137,6 +137,10 @@
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2Price)).BeginInit();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // BOTTOMLAY
@@ -346,45 +350,15 @@
             // 
             // splitContainer3.Panel1
             // 
-            this.splitContainer3.Panel1.Controls.Add(this.dataGridView2Price);
+            this.splitContainer3.Panel1.Controls.Add(this.groupBox4);
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.dataGridView3);
+            this.splitContainer3.Panel2.Controls.Add(this.groupBox5);
             this.splitContainer3.Size = new System.Drawing.Size(1036, 637);
             this.splitContainer3.SplitterDistance = 345;
             this.splitContainer3.TabIndex = 0;
             this.splitContainer3.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer3_SplitterMoved);
-            // 
-            // dataGridView2Price
-            // 
-            this.dataGridView2Price.AllowUserToAddRows = false;
-            this.dataGridView2Price.AllowUserToDeleteRows = false;
-            this.dataGridView2Price.AllowUserToOrderColumns = true;
-            this.dataGridView2Price.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2Price.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2Price.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2Price.Name = "dataGridView2Price";
-            this.dataGridView2Price.ReadOnly = true;
-            this.dataGridView2Price.RowTemplate.Height = 23;
-            this.dataGridView2Price.Size = new System.Drawing.Size(1036, 345);
-            this.dataGridView2Price.TabIndex = 3;
-            this.dataGridView2Price.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2Price_CellContentClick);
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.AllowUserToOrderColumns = true;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView3.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.RowTemplate.Height = 23;
-            this.dataGridView3.Size = new System.Drawing.Size(1036, 288);
-            this.dataGridView3.TabIndex = 2;
-            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
             // tabPage1
             // 
@@ -867,6 +841,56 @@
             this.当月屠宰头数.Name = "当月屠宰头数";
             this.当月屠宰头数.ReadOnly = true;
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.dataGridView2Price);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Location = new System.Drawing.Point(0, 0);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(1036, 345);
+            this.groupBox4.TabIndex = 0;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "每日成本查询";
+            // 
+            // dataGridView2Price
+            // 
+            this.dataGridView2Price.AllowUserToAddRows = false;
+            this.dataGridView2Price.AllowUserToDeleteRows = false;
+            this.dataGridView2Price.AllowUserToOrderColumns = true;
+            this.dataGridView2Price.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2Price.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2Price.Location = new System.Drawing.Point(3, 17);
+            this.dataGridView2Price.Name = "dataGridView2Price";
+            this.dataGridView2Price.ReadOnly = true;
+            this.dataGridView2Price.RowTemplate.Height = 23;
+            this.dataGridView2Price.Size = new System.Drawing.Size(1030, 325);
+            this.dataGridView2Price.TabIndex = 4;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.dataGridView3);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox5.Location = new System.Drawing.Point(0, 0);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(1036, 288);
+            this.groupBox5.TabIndex = 0;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "待导入成本单价";
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.AllowUserToOrderColumns = true;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView3.Location = new System.Drawing.Point(3, 17);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.RowTemplate.Height = 23;
+            this.dataGridView3.Size = new System.Drawing.Size(1030, 268);
+            this.dataGridView3.TabIndex = 3;
+            // 
             // FRMRSJYB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -897,8 +921,6 @@
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel2.ResumeLayout(false);
             this.splitContainer3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2Price)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.BOTTOM2.ResumeLayout(false);
@@ -911,6 +933,10 @@
             this.panel1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2Price)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -952,8 +978,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.SplitContainer splitContainer3;
-        private System.Windows.Forms.DataGridView dataGridView2Price;
-        private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -983,5 +1007,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 本月累计单头毛利;
         private System.Windows.Forms.DataGridViewTextBoxColumn 当天屠宰头数;
         private System.Windows.Forms.DataGridViewTextBoxColumn 当月屠宰头数;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.DataGridView dataGridView2Price;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.DataGridView dataGridView3;
     }
 }
