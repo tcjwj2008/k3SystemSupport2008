@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMRSJYB));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -43,6 +42,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMRSJYB));
             this.BOTTOMLAY = new System.Windows.Forms.Panel();
             this.midlay = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -52,6 +52,23 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.日期 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.部门代码 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.部门名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.头数 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.数量 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.收入 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.成本 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.毛利 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.单头毛利 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.本月累计头数 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.本月累计数量 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.本月累计收入 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.本月累计成本 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.本月累计毛利 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.本月累计单头毛利 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.当天屠宰头数 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.当月屠宰头数 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -59,6 +76,10 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dataGridView2Price = new System.Windows.Forms.DataGridView();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -90,27 +111,6 @@
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.日期 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.部门代码 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.部门名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.头数 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.数量 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.收入 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.成本 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.毛利 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.单头毛利 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.本月累计头数 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.本月累计数量 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.本月累计收入 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.本月累计成本 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.本月累计毛利 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.本月累计单头毛利 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.当天屠宰头数 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.当月屠宰头数 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2Price = new System.Windows.Forms.DataGridView();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.BOTTOMLAY.SuspendLayout();
             this.midlay.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -129,6 +129,10 @@
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2Price)).BeginInit();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.BOTTOM2.SuspendLayout();
@@ -137,10 +141,6 @@
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2Price)).BeginInit();
-            this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // BOTTOMLAY
@@ -274,6 +274,193 @@
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             // 
+            // 日期
+            // 
+            this.日期.DataPropertyName = "日期";
+            this.日期.Frozen = true;
+            this.日期.HeaderText = "日期";
+            this.日期.Name = "日期";
+            this.日期.ReadOnly = true;
+            this.日期.Width = 80;
+            // 
+            // 部门代码
+            // 
+            this.部门代码.DataPropertyName = "部门代码";
+            this.部门代码.Frozen = true;
+            this.部门代码.HeaderText = "部门代码";
+            this.部门代码.Name = "部门代码";
+            this.部门代码.ReadOnly = true;
+            this.部门代码.Width = 78;
+            // 
+            // 部门名称
+            // 
+            this.部门名称.DataPropertyName = "部门名称";
+            this.部门名称.Frozen = true;
+            this.部门名称.HeaderText = "部门名称";
+            this.部门名称.Name = "部门名称";
+            this.部门名称.ReadOnly = true;
+            // 
+            // 头数
+            // 
+            this.头数.DataPropertyName = "头数";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = "0";
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.头数.DefaultCellStyle = dataGridViewCellStyle1;
+            this.头数.HeaderText = "头数";
+            this.头数.Name = "头数";
+            this.头数.ReadOnly = true;
+            this.头数.Width = 54;
+            // 
+            // 数量
+            // 
+            this.数量.DataPropertyName = "数量";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = "0";
+            this.数量.DefaultCellStyle = dataGridViewCellStyle2;
+            this.数量.HeaderText = "数量";
+            this.数量.Name = "数量";
+            this.数量.ReadOnly = true;
+            // 
+            // 收入
+            // 
+            this.收入.DataPropertyName = "收入";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = "0";
+            this.收入.DefaultCellStyle = dataGridViewCellStyle3;
+            this.收入.HeaderText = "收入";
+            this.收入.Name = "收入";
+            this.收入.ReadOnly = true;
+            // 
+            // 成本
+            // 
+            this.成本.DataPropertyName = "成本";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = "0";
+            this.成本.DefaultCellStyle = dataGridViewCellStyle4;
+            this.成本.HeaderText = "成本";
+            this.成本.Name = "成本";
+            this.成本.ReadOnly = true;
+            // 
+            // 毛利
+            // 
+            this.毛利.DataPropertyName = "毛利";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = "0";
+            this.毛利.DefaultCellStyle = dataGridViewCellStyle5;
+            this.毛利.HeaderText = "毛利";
+            this.毛利.Name = "毛利";
+            this.毛利.ReadOnly = true;
+            // 
+            // 单头毛利
+            // 
+            this.单头毛利.DataPropertyName = "单头毛利";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "N2";
+            dataGridViewCellStyle6.NullValue = "0";
+            this.单头毛利.DefaultCellStyle = dataGridViewCellStyle6;
+            this.单头毛利.HeaderText = "单头毛利";
+            this.单头毛利.Name = "单头毛利";
+            this.单头毛利.ReadOnly = true;
+            // 
+            // 本月累计头数
+            // 
+            this.本月累计头数.DataPropertyName = "本月累计头数";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "N2";
+            dataGridViewCellStyle7.NullValue = "0";
+            this.本月累计头数.DefaultCellStyle = dataGridViewCellStyle7;
+            this.本月累计头数.HeaderText = "本月累计头数";
+            this.本月累计头数.Name = "本月累计头数";
+            this.本月累计头数.ReadOnly = true;
+            // 
+            // 本月累计数量
+            // 
+            this.本月累计数量.DataPropertyName = "本月累计数量";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "N2";
+            dataGridViewCellStyle8.NullValue = "0";
+            this.本月累计数量.DefaultCellStyle = dataGridViewCellStyle8;
+            this.本月累计数量.HeaderText = "本月累计数量";
+            this.本月累计数量.Name = "本月累计数量";
+            this.本月累计数量.ReadOnly = true;
+            // 
+            // 本月累计收入
+            // 
+            this.本月累计收入.DataPropertyName = "本月累计收入";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle9.Format = "N2";
+            dataGridViewCellStyle9.NullValue = "0";
+            this.本月累计收入.DefaultCellStyle = dataGridViewCellStyle9;
+            this.本月累计收入.HeaderText = "本月累计收入";
+            this.本月累计收入.Name = "本月累计收入";
+            this.本月累计收入.ReadOnly = true;
+            // 
+            // 本月累计成本
+            // 
+            this.本月累计成本.DataPropertyName = "本月累计成本";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Format = "N2";
+            dataGridViewCellStyle10.NullValue = "0";
+            this.本月累计成本.DefaultCellStyle = dataGridViewCellStyle10;
+            this.本月累计成本.HeaderText = "本月累计成本";
+            this.本月累计成本.Name = "本月累计成本";
+            this.本月累计成本.ReadOnly = true;
+            // 
+            // 本月累计毛利
+            // 
+            this.本月累计毛利.DataPropertyName = "本月累计毛利";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle11.Format = "N2";
+            dataGridViewCellStyle11.NullValue = "0";
+            this.本月累计毛利.DefaultCellStyle = dataGridViewCellStyle11;
+            this.本月累计毛利.HeaderText = "本月累计毛利";
+            this.本月累计毛利.Name = "本月累计毛利";
+            this.本月累计毛利.ReadOnly = true;
+            // 
+            // 本月累计单头毛利
+            // 
+            this.本月累计单头毛利.DataPropertyName = "本月累计单头毛利";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle12.Format = "N2";
+            dataGridViewCellStyle12.NullValue = "0";
+            this.本月累计单头毛利.DefaultCellStyle = dataGridViewCellStyle12;
+            this.本月累计单头毛利.HeaderText = "本月累计单头毛利";
+            this.本月累计单头毛利.Name = "本月累计单头毛利";
+            this.本月累计单头毛利.ReadOnly = true;
+            // 
+            // 当天屠宰头数
+            // 
+            this.当天屠宰头数.DataPropertyName = "当天屠宰头数";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle13.Format = "N2";
+            dataGridViewCellStyle13.NullValue = "0";
+            this.当天屠宰头数.DefaultCellStyle = dataGridViewCellStyle13;
+            this.当天屠宰头数.HeaderText = "当天屠宰头数";
+            this.当天屠宰头数.Name = "当天屠宰头数";
+            this.当天屠宰头数.ReadOnly = true;
+            // 
+            // 当月屠宰头数
+            // 
+            this.当月屠宰头数.DataPropertyName = "当月屠宰头数";
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle14.Format = "N2";
+            dataGridViewCellStyle14.NullValue = "0";
+            this.当月屠宰头数.DefaultCellStyle = dataGridViewCellStyle14;
+            this.当月屠宰头数.HeaderText = "当月屠宰头数";
+            this.当月屠宰头数.Name = "当月屠宰头数";
+            this.当月屠宰头数.ReadOnly = true;
+            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.groupBox3);
@@ -328,6 +515,7 @@
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.Size = new System.Drawing.Size(1036, 296);
             this.dataGridView2.TabIndex = 14;
+            this.dataGridView2.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentDoubleClick);
             // 
             // tabPage2
             // 
@@ -359,6 +547,56 @@
             this.splitContainer3.SplitterDistance = 345;
             this.splitContainer3.TabIndex = 0;
             this.splitContainer3.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer3_SplitterMoved);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.dataGridView2Price);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Location = new System.Drawing.Point(0, 0);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(1036, 345);
+            this.groupBox4.TabIndex = 0;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "每日成本查询";
+            // 
+            // dataGridView2Price
+            // 
+            this.dataGridView2Price.AllowUserToAddRows = false;
+            this.dataGridView2Price.AllowUserToDeleteRows = false;
+            this.dataGridView2Price.AllowUserToOrderColumns = true;
+            this.dataGridView2Price.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2Price.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2Price.Location = new System.Drawing.Point(3, 17);
+            this.dataGridView2Price.Name = "dataGridView2Price";
+            this.dataGridView2Price.ReadOnly = true;
+            this.dataGridView2Price.RowTemplate.Height = 23;
+            this.dataGridView2Price.Size = new System.Drawing.Size(1030, 325);
+            this.dataGridView2Price.TabIndex = 4;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.dataGridView3);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox5.Location = new System.Drawing.Point(0, 0);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(1036, 288);
+            this.groupBox5.TabIndex = 0;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "待导入成本单价";
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.AllowUserToOrderColumns = true;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView3.Location = new System.Drawing.Point(3, 17);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.RowTemplate.Height = 23;
+            this.dataGridView3.Size = new System.Drawing.Size(1030, 268);
+            this.dataGridView3.TabIndex = 3;
             // 
             // tabPage1
             // 
@@ -654,243 +892,6 @@
             this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
             this.toolStripSeparator6.Click += new System.EventHandler(this.toolStripSeparator6_Click);
             // 
-            // 日期
-            // 
-            this.日期.DataPropertyName = "日期";
-            this.日期.Frozen = true;
-            this.日期.HeaderText = "日期";
-            this.日期.Name = "日期";
-            this.日期.ReadOnly = true;
-            this.日期.Width = 80;
-            // 
-            // 部门代码
-            // 
-            this.部门代码.DataPropertyName = "部门代码";
-            this.部门代码.Frozen = true;
-            this.部门代码.HeaderText = "部门代码";
-            this.部门代码.Name = "部门代码";
-            this.部门代码.ReadOnly = true;
-            this.部门代码.Width = 78;
-            // 
-            // 部门名称
-            // 
-            this.部门名称.DataPropertyName = "部门名称";
-            this.部门名称.Frozen = true;
-            this.部门名称.HeaderText = "部门名称";
-            this.部门名称.Name = "部门名称";
-            this.部门名称.ReadOnly = true;
-            // 
-            // 头数
-            // 
-            this.头数.DataPropertyName = "头数";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = "0";
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.头数.DefaultCellStyle = dataGridViewCellStyle1;
-            this.头数.HeaderText = "头数";
-            this.头数.Name = "头数";
-            this.头数.ReadOnly = true;
-            this.头数.Width = 54;
-            // 
-            // 数量
-            // 
-            this.数量.DataPropertyName = "数量";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = "0";
-            this.数量.DefaultCellStyle = dataGridViewCellStyle2;
-            this.数量.HeaderText = "数量";
-            this.数量.Name = "数量";
-            this.数量.ReadOnly = true;
-            // 
-            // 收入
-            // 
-            this.收入.DataPropertyName = "收入";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = "0";
-            this.收入.DefaultCellStyle = dataGridViewCellStyle3;
-            this.收入.HeaderText = "收入";
-            this.收入.Name = "收入";
-            this.收入.ReadOnly = true;
-            // 
-            // 成本
-            // 
-            this.成本.DataPropertyName = "成本";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = "0";
-            this.成本.DefaultCellStyle = dataGridViewCellStyle4;
-            this.成本.HeaderText = "成本";
-            this.成本.Name = "成本";
-            this.成本.ReadOnly = true;
-            // 
-            // 毛利
-            // 
-            this.毛利.DataPropertyName = "毛利";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "N2";
-            dataGridViewCellStyle5.NullValue = "0";
-            this.毛利.DefaultCellStyle = dataGridViewCellStyle5;
-            this.毛利.HeaderText = "毛利";
-            this.毛利.Name = "毛利";
-            this.毛利.ReadOnly = true;
-            // 
-            // 单头毛利
-            // 
-            this.单头毛利.DataPropertyName = "单头毛利";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Format = "N2";
-            dataGridViewCellStyle6.NullValue = "0";
-            this.单头毛利.DefaultCellStyle = dataGridViewCellStyle6;
-            this.单头毛利.HeaderText = "单头毛利";
-            this.单头毛利.Name = "单头毛利";
-            this.单头毛利.ReadOnly = true;
-            // 
-            // 本月累计头数
-            // 
-            this.本月累计头数.DataPropertyName = "本月累计头数";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Format = "N2";
-            dataGridViewCellStyle7.NullValue = "0";
-            this.本月累计头数.DefaultCellStyle = dataGridViewCellStyle7;
-            this.本月累计头数.HeaderText = "本月累计头数";
-            this.本月累计头数.Name = "本月累计头数";
-            this.本月累计头数.ReadOnly = true;
-            // 
-            // 本月累计数量
-            // 
-            this.本月累计数量.DataPropertyName = "本月累计数量";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "N2";
-            dataGridViewCellStyle8.NullValue = "0";
-            this.本月累计数量.DefaultCellStyle = dataGridViewCellStyle8;
-            this.本月累计数量.HeaderText = "本月累计数量";
-            this.本月累计数量.Name = "本月累计数量";
-            this.本月累计数量.ReadOnly = true;
-            // 
-            // 本月累计收入
-            // 
-            this.本月累计收入.DataPropertyName = "本月累计收入";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle9.Format = "N2";
-            dataGridViewCellStyle9.NullValue = "0";
-            this.本月累计收入.DefaultCellStyle = dataGridViewCellStyle9;
-            this.本月累计收入.HeaderText = "本月累计收入";
-            this.本月累计收入.Name = "本月累计收入";
-            this.本月累计收入.ReadOnly = true;
-            // 
-            // 本月累计成本
-            // 
-            this.本月累计成本.DataPropertyName = "本月累计成本";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.Format = "N2";
-            dataGridViewCellStyle10.NullValue = "0";
-            this.本月累计成本.DefaultCellStyle = dataGridViewCellStyle10;
-            this.本月累计成本.HeaderText = "本月累计成本";
-            this.本月累计成本.Name = "本月累计成本";
-            this.本月累计成本.ReadOnly = true;
-            // 
-            // 本月累计毛利
-            // 
-            this.本月累计毛利.DataPropertyName = "本月累计毛利";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle11.Format = "N2";
-            dataGridViewCellStyle11.NullValue = "0";
-            this.本月累计毛利.DefaultCellStyle = dataGridViewCellStyle11;
-            this.本月累计毛利.HeaderText = "本月累计毛利";
-            this.本月累计毛利.Name = "本月累计毛利";
-            this.本月累计毛利.ReadOnly = true;
-            // 
-            // 本月累计单头毛利
-            // 
-            this.本月累计单头毛利.DataPropertyName = "本月累计单头毛利";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle12.Format = "N2";
-            dataGridViewCellStyle12.NullValue = "0";
-            this.本月累计单头毛利.DefaultCellStyle = dataGridViewCellStyle12;
-            this.本月累计单头毛利.HeaderText = "本月累计单头毛利";
-            this.本月累计单头毛利.Name = "本月累计单头毛利";
-            this.本月累计单头毛利.ReadOnly = true;
-            // 
-            // 当天屠宰头数
-            // 
-            this.当天屠宰头数.DataPropertyName = "当天屠宰头数";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle13.Format = "N2";
-            dataGridViewCellStyle13.NullValue = "0";
-            this.当天屠宰头数.DefaultCellStyle = dataGridViewCellStyle13;
-            this.当天屠宰头数.HeaderText = "当天屠宰头数";
-            this.当天屠宰头数.Name = "当天屠宰头数";
-            this.当天屠宰头数.ReadOnly = true;
-            // 
-            // 当月屠宰头数
-            // 
-            this.当月屠宰头数.DataPropertyName = "当月屠宰头数";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle14.Format = "N2";
-            dataGridViewCellStyle14.NullValue = "0";
-            this.当月屠宰头数.DefaultCellStyle = dataGridViewCellStyle14;
-            this.当月屠宰头数.HeaderText = "当月屠宰头数";
-            this.当月屠宰头数.Name = "当月屠宰头数";
-            this.当月屠宰头数.ReadOnly = true;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.dataGridView2Price);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Location = new System.Drawing.Point(0, 0);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1036, 345);
-            this.groupBox4.TabIndex = 0;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "每日成本查询";
-            // 
-            // dataGridView2Price
-            // 
-            this.dataGridView2Price.AllowUserToAddRows = false;
-            this.dataGridView2Price.AllowUserToDeleteRows = false;
-            this.dataGridView2Price.AllowUserToOrderColumns = true;
-            this.dataGridView2Price.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2Price.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2Price.Location = new System.Drawing.Point(3, 17);
-            this.dataGridView2Price.Name = "dataGridView2Price";
-            this.dataGridView2Price.ReadOnly = true;
-            this.dataGridView2Price.RowTemplate.Height = 23;
-            this.dataGridView2Price.Size = new System.Drawing.Size(1030, 325);
-            this.dataGridView2Price.TabIndex = 4;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.dataGridView3);
-            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox5.Location = new System.Drawing.Point(0, 0);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(1036, 288);
-            this.groupBox5.TabIndex = 0;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "待导入成本单价";
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.AllowUserToOrderColumns = true;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView3.Location = new System.Drawing.Point(3, 17);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.RowTemplate.Height = 23;
-            this.dataGridView3.Size = new System.Drawing.Size(1030, 268);
-            this.dataGridView3.TabIndex = 3;
-            // 
             // FRMRSJYB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -921,6 +922,10 @@
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel2.ResumeLayout(false);
             this.splitContainer3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2Price)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.BOTTOM2.ResumeLayout(false);
@@ -933,10 +938,6 @@
             this.panel1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2Price)).EndInit();
-            this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
 
         }

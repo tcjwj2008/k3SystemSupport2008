@@ -1587,7 +1587,10 @@ namespace YXK3FZ.RYGYL.RP.from
                                  Math.Round(double.Parse(this.dataGridView1[4, e.RowIndex].Value.ToString()), 0) + "KG、收入:" +
                                  Math.Round(double.Parse(this.dataGridView1[5, e.RowIndex].Value.ToString()), 0) + "元、成本" +
                                  Math.Round(double.Parse(this.dataGridView1[6, e.RowIndex].Value.ToString()), 0) + "元、毛利" +
-                                 Math.Round(double.Parse(this.dataGridView1[7, e.RowIndex].Value.ToString()), 0) + "元、";
+                                 Math.Round(double.Parse(this.dataGridView1[7, e.RowIndex].Value.ToString()), 0) + "元、本月累计数量" +
+                                 Math.Round(double.Parse(this.dataGridView1[10, e.RowIndex].Value.ToString()), 0) + "元、本月累计收入" +
+                                 Math.Round(double.Parse(this.dataGridView1[11, e.RowIndex].Value.ToString()), 0) + "元、本月累计毛利" +
+                                 Math.Round(double.Parse(this.dataGridView1[13, e.RowIndex].Value.ToString()), 0) + "元、";
                 if (this.dataGridView1[1, e.RowIndex].Value.ToString() == "10.12" || this.dataGridView1[1, e.RowIndex].Value.ToString() == "10.13" || this.dataGridView1[1, e.RowIndex].Value.ToString() == "10.11")
                 {
                     if (this.dataGridView1[8, e.RowIndex].Value.ToString() != "")
@@ -1707,6 +1710,15 @@ namespace YXK3FZ.RYGYL.RP.from
                 }
             }
 
+
+        }
+        /// <summary>
+        /// 双击回款明细过程
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGridView2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

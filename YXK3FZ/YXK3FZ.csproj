@@ -318,6 +318,14 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\RP\from\frmbmhk.resx">
+      <DependentUpon>frmbmhk.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\RP\from\frmbmhkmonth.resx">
+      <DependentUpon>frmbmhkmonth.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="RYGYL\RP\from\frmBTpfsk.resx">
       <DependentUpon>frmBTpfsk.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -348,6 +356,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RYGYL\RP\from\frmmdcb.resx">
       <DependentUpon>frmmdcb.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RYGYL\RP\from\frmmddthk.resx">
+      <DependentUpon>frmmddthk.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="RYGYL\RP\from\frmmdljxl.resx">
@@ -808,6 +820,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="RYGYL\RP\from\frmbmhk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\RP\from\frmbmhk.Designer.cs">
+      <DependentUpon>frmbmhk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\RP\from\frmbmhkmonth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\RP\from\frmbmhkmonth.Designer.cs">
+      <DependentUpon>frmbmhkmonth.cs</DependentUpon>
+    </Compile>
     <Compile Include="RYGYL\RP\from\frmBTpfsk.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -855,6 +879,12 @@
     </Compile>
     <Compile Include="RYGYL\RP\from\frmmdcb.Designer.cs">
       <DependentUpon>frmmdcb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RYGYL\RP\from\frmmddthk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RYGYL\RP\from\frmmddthk.Designer.cs">
+      <DependentUpon>frmmddthk.cs</DependentUpon>
     </Compile>
     <Compile Include="RYGYL\RP\from\frmmdljxl.cs">
       <SubType>Form</SubType>

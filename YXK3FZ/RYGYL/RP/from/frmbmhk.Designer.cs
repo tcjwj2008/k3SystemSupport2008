@@ -1,6 +1,6 @@
 ﻿namespace YXK3FZ.RYGYL.RP.from
 {
-    partial class frmmdts
+    partial class frmbmhk
     {
         /// <summary>
         /// Required designer variable.
@@ -52,7 +52,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(900, 558);
+            this.dataGridView1.Size = new System.Drawing.Size(874, 482);
             this.dataGridView1.TabIndex = 0;
             // 
             // panel1
@@ -61,8 +61,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 25);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(900, 558);
-            this.panel1.TabIndex = 5;
+            this.panel1.Size = new System.Drawing.Size(874, 482);
+            this.panel1.TabIndex = 9;
             // 
             // toolStripLabel2
             // 
@@ -93,20 +93,20 @@
             this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(900, 25);
-            this.toolStrip1.TabIndex = 4;
+            this.toolStrip1.Size = new System.Drawing.Size(874, 25);
+            this.toolStrip1.TabIndex = 8;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // frmmdts
+            // frmbmhk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 583);
+            this.ClientSize = new System.Drawing.Size(874, 507);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "frmmdts";
-            this.Text = "门店头数明细";
-            this.Load += new System.EventHandler(this.frmmdts_Load);
+            this.Name = "frmbmhk";
+            this.Text = "部门回款明细";
+            this.Load += new System.EventHandler(this.frmbmhk_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
