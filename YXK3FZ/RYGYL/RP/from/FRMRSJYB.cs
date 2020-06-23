@@ -1721,5 +1721,45 @@ namespace YXK3FZ.RYGYL.RP.from
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+            this.tabControl1.SelectedIndex = 3;
+            Ftype = 1;
+            WaitFormService.CreateWaitForm();
+            WaitFormService.SetWaitFormCaption("数据正在处理......");           
+
+            SqlParameter param1 = new SqlParameter("@BegDate", SqlDbType.DateTime);
+            param1.Value = this.dateTimePicker1.Value;
+            SqlParameter param2 = new SqlParameter("@EndDate", SqlDbType.DateTime);
+            //param1.Value = this.dateTimePicker1.Value;
+            param2.Value = this.dateTimePicker2.Value;
+            //创建泛型
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(param1);
+            parameters.Add(param2);
+            //把泛型中的元素复制到数组中
+            SqlParameter[] inputParameters = parameters.ToArray();
+            try
+            {
+                ds = db.GetProcDataSet("sp_sel_yx_rs_ysprice", inputParameters);
+                this.dataGridView4.DataSource = ds.Tables[0];
+             
+                WaitFormService.CloseWaitForm();
+            }
+            catch (Exception err)
+            {
+                WaitFormService.CloseWaitForm();
+                MessageBox.Show("操作失败！" + err.ToString());             
+
+            }
+        }
+
+        private void toolStripLabel6_Click_1(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 3;
+            CommExcel.ExportExcel("", this.dataGridView4, true);
+        }
     }
 }
