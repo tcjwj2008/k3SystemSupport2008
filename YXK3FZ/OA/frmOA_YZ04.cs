@@ -63,7 +63,7 @@ namespace YXK3FZ.OA
             sSQL += " SELECT   CASE WHEN b.yewulx = 0 THEN '粕加工业务'   WHEN b.yewulx = 1 THEN '油加工业务' WHEN b.yewulx = 2 THEN '粕贸易'   ELSE '油贸易'    END as 业务类型 ,";
             sSQL += " CASE WHEN b.fapiaolx = 0 THEN '专票'   ELSE '普票'  END as 发票类型 ,";
             sSQL += " b.sqrq 开票日期,b.kaipiaodw 开票名称,c.hetonghao 合同号,b.fapiaohm 发票号码,d.selectname 商品名称,  ";
-            sSQL += " c.shuliang2 数量,c.danjia 单价,convert(varchar,convert(money,c.jinen2),1)  价税合计, c.shuilv AS 税率, c.shuie AS 税额,c.jinen2-c.shuie as 金额,b.bz 备注    ";
+            sSQL += " c.shuliang2 数量,c.danjia 单价,convert(varchar,convert(money,c.jinen2),1)  价税合计, c.shuilv AS 税率, c.shuie AS 税额,c.jinen2-c.shuie as 金额,c.kaishirq AS 开始时间,c.jiesurq AS 结束时间,b.bz 备注    ";
 			sSQL += " FROM workflow_requestbase a ";
 			sSQL += " INNER JOIN formtable_main_203 b ON b.requestId = a.requestid ";
 			sSQL += " INNER JOIN formtable_main_203_dt1 c ON b.id=c.mainid ";

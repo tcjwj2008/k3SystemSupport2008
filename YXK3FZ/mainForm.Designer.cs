@@ -1585,7 +1585,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.38462F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.61538F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 261F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 584F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 585F));
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.button2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.button3, 0, 1);
@@ -1689,7 +1689,7 @@
             this.button2.ImageList = this.imgMain;
             this.button2.Location = new System.Drawing.Point(66, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(54, 88);
+            this.button2.Size = new System.Drawing.Size(53, 88);
             this.button2.TabIndex = 1;
             this.button2.Text = "权限管理";
             this.button2.UseVisualStyleBackColor = true;

@@ -63,6 +63,8 @@
             this.税率 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.税额 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.金额 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.开始时间 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.结束时间 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -264,6 +266,8 @@
             this.税率,
             this.税额,
             this.金额,
+            this.开始时间,
+            this.结束时间,
             this.Column10});
             this.dataGridView1.DataSource = this.bdsMaster;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -376,6 +380,20 @@
             this.金额.Name = "金额";
             this.金额.ReadOnly = true;
             // 
+            // 开始时间
+            // 
+            this.开始时间.DataPropertyName = "开始时间";
+            this.开始时间.HeaderText = "开始时间";
+            this.开始时间.Name = "开始时间";
+            this.开始时间.ReadOnly = true;
+            // 
+            // 结束时间
+            // 
+            this.结束时间.DataPropertyName = "结束时间";
+            this.结束时间.HeaderText = "结束时间";
+            this.结束时间.Name = "结束时间";
+            this.结束时间.ReadOnly = true;
+            // 
             // Column10
             // 
             this.Column10.DataPropertyName = "备注";
@@ -436,6 +454,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 税率;
         private System.Windows.Forms.DataGridViewTextBoxColumn 税额;
         private System.Windows.Forms.DataGridViewTextBoxColumn 金额;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 开始时间;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 结束时间;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
 	}
 }
