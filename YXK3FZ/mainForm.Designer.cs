@@ -1585,7 +1585,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.38462F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.61538F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 261F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 582F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 584F));
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.button2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.button3, 0, 1);
@@ -1607,7 +1607,7 @@
             this.button1.ImageList = this.imgMain;
             this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(58, 88);
+            this.button1.Size = new System.Drawing.Size(57, 88);
             this.button1.TabIndex = 0;
             this.button1.Text = "用户管理";
             this.button1.UseVisualStyleBackColor = true;
@@ -1687,9 +1687,9 @@
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button2.ImageKey = "操作权限.ico";
             this.button2.ImageList = this.imgMain;
-            this.button2.Location = new System.Drawing.Point(67, 3);
+            this.button2.Location = new System.Drawing.Point(66, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(55, 88);
+            this.button2.Size = new System.Drawing.Size(54, 88);
             this.button2.TabIndex = 1;
             this.button2.Text = "权限管理";
             this.button2.UseVisualStyleBackColor = true;
@@ -1703,7 +1703,7 @@
             this.button3.ImageList = this.imgMain;
             this.button3.Location = new System.Drawing.Point(3, 97);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(58, 85);
+            this.button3.Size = new System.Drawing.Size(57, 85);
             this.button3.TabIndex = 2;
             this.button3.Text = "修改密码";
             this.button3.UseVisualStyleBackColor = true;
