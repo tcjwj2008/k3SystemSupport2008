@@ -1585,7 +1585,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.38462F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.61538F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 261F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 586F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 587F));
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.button2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.button3, 0, 1);
@@ -1689,7 +1689,7 @@
             this.button2.ImageList = this.imgMain;
             this.button2.Location = new System.Drawing.Point(65, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(53, 88);
+            this.button2.Size = new System.Drawing.Size(52, 88);
             this.button2.TabIndex = 1;
             this.button2.Text = "权限管理";
             this.button2.UseVisualStyleBackColor = true;
@@ -1858,7 +1858,7 @@
             "筐具出入库订单__报表"});
             this.listBox7.Location = new System.Drawing.Point(3, 3);
             this.listBox7.Name = "listBox7";
-            this.listBox7.Size = new System.Drawing.Size(753, 352);
+            this.listBox7.Size = new System.Drawing.Size(753, 355);
             this.listBox7.TabIndex = 0;
             // 
             // tabControl4
